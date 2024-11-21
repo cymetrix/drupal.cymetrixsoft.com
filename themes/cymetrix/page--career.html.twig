@@ -1,0 +1,21 @@
+{{ dump(jobs)}}
+
+
+
+{% if node.bundle == 'job' %}
+  <h2>{{ node.title.value }}</h2>
+  <div>{{ node.body.value }}</div>
+{% endif %}
+
+{% if jobs %}
+  <div class="job-listings">
+    {% for job in jobs %}
+      <div class="job-listing">
+        <h2>{{ job.title.value }}</h2>
+        {# Output other fields as needed #}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No job listings available.</p>
+{% endif %}

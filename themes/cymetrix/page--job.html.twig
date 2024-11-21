@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Your Website</title>
+</head>
+
+<body>
+
+ <header id="web_nav" class="container cymetrix_container navbar navbar-expand-lg navbar-light" >
+        <a class="navbar-brand" href="#">
+            {#<img src="{{ file_url('public://assets/logo.png') }}" alt="Logo">#}
+            <a href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            {{ page.primary_menu }}
+        </div>
+    </header>
+    
+    <header class="mobile_nav navbar navbar-expand-lg navbar-light" >
+        <div class="container cymetrix_container">
+            <div class="flexNav">
+                <a class="mob_logo" href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+    
+    
+            <div class="nav_contact">
+            		<a href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us
+            		<img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/Group%207.png" alt="contact icon">
+            		</a>
+        	    </div>
+        
+            </div>
+                
+        </div>
+        </header>
+        
+        <nav class="mobile_nav mobMenu navbar navbar-expand-lg navbar-light" style="background-color:#E0E0E099;padding: 0px !important;">
+             <div class="flexNav container cymetrix_container">
+                    <p>Home</p>
+
+                    
+                    <div class="menu-toggle" onclick="this.classList.toggle('open')" data-toggle="collapse" data-target="#navbarNav2"
+                    aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+                      <div class="bar"></div>
+                      <div class="bar"></div>
+                      <div class="bar"></div>
+                    </div>
+
+                    
+                </div>
+                
+            
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav2">
+                    {{ page.primary_menu }}
+                </div>    
+
+
+        </nav>
+   
+
+
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="page">
+            
+            
+            
+            <style>
+               #blog-banner{
+         width:1512px;
+         height:620px;
+         background-color:#e3f2fd;
+         position: relative;
+        }
+        .right_info img{
+            width:100%;
+        }
+        .right_info{
+            height: 512px;
+    width: 682px;
+    position: absolute;
+    right: 5%;
+    bottom: -10%;
+        }
+        .banner-title{
+            position: absolute;
+            top: 20%;
+        }
+        .banner-title h2{
+            font-size: 54px;
+            font-weight: 700;
+            border-left: 4px solid #1B7EC1;
+            padding: 15px;
+        }
+                .job_div{
+                    background:#F4F4F4;
+                        padding: 15px;
+                }
+                .job_attributes{
+                    display:flex;
+                }
+                .job_attributes span{
+                    background: #1b7ec114;
+                    margin: 0 15px 0 0;
+                    padding: 8px;
+                    font-size: 18px;
+                }
+                .job_title{
+                    font-size:24px;
+                    font-weight:500;
+                    list-style-type:none;
+                    padding: 20px;
+                        border-bottom: 2px solid white;
+                }
+                .job_title:hover{
+                    background:white;
+                        border-top: 2px solid #1B7EC1;
+    border-bottom: 2px solid #1B7EC1;
+                }
+                
+               .job_title:hover .text {
+                  display: inline;
+}
+
+                .job_title:hover a.view-responsibilities-link{
+                    text-decoration:none;
+                }
+
+             
+
+.view-responsibilities-link .text {
+  display: none;
+}
+
+.job_attributes{
+    position:relative;
+}
+.job_action{
+    position: absolute;
+    right: 0;
+}
+
+            </style>
+    
+    
+    
+      <div id="blog-banner" class="animated-paragraph">
+        <div class="container">
+            <div class="banner-title">
+                <h2>Empowering a <br> journey with<br>
+                    <span style="color:#1B7EC1">Reliable Support</span>
+                </h2>
+                <a class="cymetrix_button_icon custom_button" href="#">Contact Expert</a>
+            </div>
+            
+            <div class="right_info">
+                <img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/2ba7b7e02074bbfda63797de4c95e3a8.png">
+            </div>
+        </div>
+    </div>
+    
+    <br/>
+    
+        <div class="container">
+                
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Join the team</h2>
+            </div>
+            <div class="col-sm-6">
+                <p>Are you ready to embark on a journey of innovation, growth, and excellence? At Cymetrix, we're always on the lookout for passionate individuals who thrive in a dynamic and collaborative environment. Join us in our mission to empower businesses through cutting-edge technology solutions.</p>
+                <p>Explore our current job openings below and discover exciting opportunities to shape the future of technology.</p>
+                <p><b>Your next career adventure begins here.</b></p>
+            </div>
+        </div>
+        
+        </div>
+
+<br/><br/><br/>
+              <main class="animated-paragraph job_div">
+                  <div class="container">
+                      
+                  <div class="row">
+           
+
+
+
+{% if jobs %}
+  <div class="all-content">
+<h2 class="text-center">Our Open Positions</h2>
+      {% for job in jobs %}
+        <li class="job_title">
+          <a href="{{ path('entity.node.canonical', {'node': job.id()}) }}">{{ job.label() }}</a>
+
+<div class="job_attributes">
+    <div class="job_attributes_fields">
+        <span>{{ job.field_location.value }}</span>
+        <span>{{ job.field_experience.value }}</span>
+        <span>{{ job.field_work_type.value }}</span>        
+    </div>
+    <div class="job_action">
+        
+         <a href="{{ path('entity.node.canonical', {'node': job.id()}) }}" class="view-responsibilities-link">
+            <span class="text">View Responsibilities</span>
+            <svg width="39" height="20" viewBox="0 0 39 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 10.6891H36.0351L31.6986 15.0256L32.673 16L38.673 10L32.673 4L31.6986 4.97439L36.0351 9.3109H6V10.6891Z" fill="#1B7EC1"/>
+              <circle cx="10" cy="10" r="9.5" stroke="#1B7EC1"/>
+            </svg>
+          </a>
+
+
+    </div>
+
+</div>
+          
+
+
+        </li>
+      {% endfor %}
+
+  </div>
+{% endif %}
+
+
+         
+        </div>
+                  </div>
+    </main>
+        </div>
+    </div>
+
+    {% include "themes/cymetrix/footer.html.twig" %}
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
+
+
+

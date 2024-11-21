@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <title>Your Website</title>
+      <meta name="robots" content="noindex, nofollow">
+   </head>
+   <body>
+      <style>
+      
+      @media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1320px;
+    }
+}
+         .job_desc_banner{
+         height:434px;
+         width:100%;
+         background:#E3F2FD;
+         position: relative;
+         }
+         .job_attributes{
+         display:flex;
+         }
+         .job_attributes span{
+         background: #1b7ec114;
+         margin: 0 15px 0 0;
+         padding: 8px;
+         font-size: 18px;
+         font-weight:600;
+         }
+         .banner_fields{
+         position: absolute;
+         top: 15%;
+         left: 10%;
+         width:80%;
+         }
+         .cymetrix_button_icon.custom_button::after {
+         content: url(data:image/svg+xml;utf8,
+         <svg width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.5 10.6891H36.5351L32.1986 15.0256L33.173 16L39.173 10L33.173 4L32.1986 4.97439L36.5351 9.3109H6.5V10.6891Z" fill="white"/>
+            <circle cx="10.5" cy="10" r="9.5" stroke="white"/>
+         </svg>
+         );
+         position: absolute;
+         top: 50%;
+         transform: translate(50%, -50%);
+         width: 39px;
+         height: 20px;
+         transition: transform 0.3s ease;
+         right: 25%;
+         }
+         .cymetrix_button_icon.custom_button{
+         padding-right: 8%;
+         }
+         .redirectNavs{
+         display: flex;
+         justify-content: space-between;
+         }
+         .redirectNavs a:nth-child(1) svg{
+         transform: rotate(180deg);
+         }
+         .job_sttr_heading{
+         font-size:22px;
+         font-weight:600;
+         }
+         h1{
+        font-size: 30px;
+    font-weight: 800;
+    padding-right: 320px;
+         }
+         .case_study_about img{
+             width:100%;
+             height:100%;
+             object-fit:cover;
+         }
+         
+         .field_highlight_text{
+      text-align: center;
+    background-color: #f1f7fb;
+    padding: 20px 198px;
+    border: solid 2px #1b7ec1;
+    border-radius: 10px;
+    font-weight: 600;  
+         }
+         
+    .banner-left-border, .salesforce_banner .az-moveable-element h2 {
+     margin-top: 50px;
+}     
+         
+         
+      .casestudies-intext ul li::marker {color: #a9a8a8; font-size: 20px;}   
+      
+      hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgb(0 0 0 / 50%);
+      margin-bottom: 40px;
+    margin-top: 30px !important;
+}
+
+.left-brober-box ul li{
+    
+border-left: solid 3px #1b7ec1;
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 20px;    
+}
+         
+         
+      @media (max-width:768px) {
+          
+       .banner_fields {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    width: 90%;
+}   
+
+h1 { font-size: 20px; font-weight: 800; padding-right: 0px;}
+.job_desc_banner {height: 220px;}
+.field_highlight_text { padding: 20px 20px;}   
+     
+  hr { margin-bottom: 20px; margin-top: 10px !important;} 
+  
+    .testimonials-wrapper {
+    position: relative;
+   width: 85% !important;
+    max-width: none;      
+    }
+    
+ .views-field-body {
+    padding: 20px 20px;
+}   
+
+.views-field-field-author { font-size: 16px;}
+.views-field-field-author-position { font-size: 14px;}    
+          
+          
+      }   
+    </style>
+      {% set title = node.title.value %}
+      {% set body = node.body.value %}
+      {% set field_experience = node.field_experience.value %}
+      {% set field_location = node.field_location.value %}
+      {% set field_work_type = node.field_work_type.value %}
+      {% set description = node.field_description.value %}
+      {% set field_must_have = node.field_must_have.value %}
+      {% set nice_to_have = node.field_nice_to_have.value %}
+      
+      {% set field_casestudy_background = node.field_casestudy_background.value %}
+      
+      {% set field_platform_used = node.field_platform_used.value %}
+      
+      {% set field_challenge = node.field_challenge.value %}
+      
+      {% set field_solution = node.field_solution.value %}
+      {% set field_result = node.field_result.value %}
+      {% set field_case_study_category = node.field_case_study_category.value %}
+      {% set field_highlight_text = node.field_highlight_text.value %}
+      {% set field_case_study_about = node.field_case_study_about.value %}
+            
+      {% set banner_media = node.field_case_study_banner.entity %}
+
+
+      
+      {% set field_casestudy_about_image = node.field_casestudy_about_image.value %}
+      
+      
+      
+      
+      {# Set variables for the banner image #}
+{% set banner_media = node.field_case_study_banner.entity %}
+
+<div class="job_desc_banner">
+    
+    {# If the banner image exists, display it #}
+    {% if banner_media and banner_media.field_media_image is not empty %}
+        <div class="case-study-banner">
+            <img src="{{ file_url(banner_media.field_media_image.entity.uri.value) }}" alt="{{ title }}" />
+        </div>
+    {% endif %}
+    
+    <div class="banner_fields">
+        <div class="banner-left-border">
+            <h6>
+                <a class="cymetrix_button_icon reverse" href="https://drupal.cymetrixsoft.com">Home</a> /
+                <a href="./customer-stories">Case Studies</a>
+            </h6>
+            <h1>{{ title }}</h1>
+        </div>
+    </div>
+</div>
+
+      
+{#      <div class="job_desc_banner" >#}
+{#         <div class="banner_fields">#}
+{#            <div class="banner-left-border">#}
+{#			    <h6><a class="cymetrix_button_icon reverse" href="./">Home</a> / <a class="" href="./about-us">About Us</a> / <a class="" href="./customer-stories">Case Studies </a> / </h6>#}
+{#               <h1>{{ title }}</h1>#}
+{#            </div>#}
+{#         </div>#}
+{#      </div>#}
+      
+      
+      
+
+{#{% if banner_media and banner_media.field_media_image is not empty %}#}
+{#    <div class="case-study-banner">#}
+{#        <img src="{{ file_url(banner_media.field_media_image.entity.uri.value) }}" alt="{{ title }}" />#}
+{#    </div>#}
+{#{% endif %}#}
+      {{ field_case_study_banner|raw }}
+      {{ field_case_study_banner}}
+{#{% set field_case_study_about = node.field_case_study_banner.value %}#}
+
+
+
+      
+      <div class="container" style="padding-top: 60px;padding-bottom: 60px;">
+         <h2 class="text-center" >Customer Story</h2>
+           <div class="field_highlight_text">
+             {{ field_highlight_text|raw}}
+
+         </div>
+        <br>
+               <hr>
+                <br>
+         <div class="casestudies-intext">
+            <div class="row">
+               <div class="col-sm-3">
+                  <span class="job_sttr_heading">Background</span>
+               </div>
+               <div class="col-sm-9">
+
+                  {{ field_casestudy_background|raw }}
+               </div>
+               
+                <br>
+               <hr>
+                <br>
+               
+               <div class="col-sm-3">
+                  <span class="job_sttr_heading">Platform Used</span>
+               </div>
+               <div class="col-sm-9">
+                  {{ field_platform_used|raw }}
+               </div>
+               
+                <br>
+               <hr>
+                <br>
+               
+                            
+                            
+               <div class="col-sm-3">
+                  <span class="job_sttr_heading">Challenge</span>
+               </div>
+               
+               
+               <div class="col-sm-9">
+                  {{ field_challenge|raw }}
+               </div>
+               
+                <br>
+               <hr>
+                <br>
+               
+                <div class="col-sm-3">
+                  <span class="job_sttr_heading">Solution</span>
+               </div>
+               <div class="col-sm-9">
+
+                  {{ field_solution|raw }}
+               </div>
+               
+               <br>
+               <hr>
+                <br>
+               
+                <div class="col-sm-3">
+                  <span class="job_sttr_heading">Result</span>
+               </div>
+               <div class="col-sm-9">
+                <div class="left-brober-box">
+                  {{ field_result|raw }}
+                  </div>
+               </div>
+               
+               
+               
+               
+               <div class="col-sm-3"></div>
+               <div class="col-sm-9">
+                  <a href="#" data-toggle="modal" data-target="#jobApplicationModal" class="cymetrix_button_icon custom_button" href="#">Contact Expert</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      
+      {##}
+      
+      
+      <style>
+.testimonials-wrapper {
+    position: relative;
+    width: 100%;
+    max-width:838px;
+    overflow: hidden; /* This hides the overflow when sliding */
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px #00000033;
+    /*padding: 30px 0px;*/
+    text-align: center;
+
+}
+.testimonial-body{
+    padding:3%;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 279px;
+    
+}
+.testimonial-footer{
+    background:rgba(241, 247, 251, 1);
+    padding:2%;
+}
+
+.views-field-body{padding: 20px 50px;}
+.views-field-field-author{ font-size:22px; font-weight: 600;  }
+.views-field-field-author-position{ font-size:18px; font-weight: 600; }
+
+.view-content {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Smooth transition for sliding effect */
+    will-change: transform; /* Optimize performance for transitions */
+}
+
+.views-row {
+    min-width: 100%; /* Each testimonial takes up full width of the wrapper */
+    box-sizing: border-box;
+    flex: 0 0 100%; /* Ensure the slides don't shrink or grow */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#prev-slide, #next-slide {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#prev-slide:hover, #next-slide:hover {
+    background-color: #ccc;
+}
+
+.case_study_about p{margin: 0px auto 0px;}
+
+.testimonial_author{
+    font-size:24px;
+    font-weight:600;
+    
+}
+.testimonial_position{
+    font-size:18px;
+    font-weight:700;
+}
+   @media (max-width:768px) {
+          
+      }  
+
+      </style>
+      
+      
+      
+
+
+
+{% if node.field_testimonials is not empty %}
+
+  <div class="case_study_testimonial" style="background:#F4F4F4;padding-top: 60px;padding-bottom: 60px;">
+    <h2 class="text-center">Clients Speak</h2>
+
+
+
+  <div id="testimonial-slider" class="testimonials-wrapper">
+    <div class="view-content">
+    {% for testimonial in node.field_testimonials %}
+      {% set testimonial_node = testimonial.entity %}
+      <div class="views-row">
+        
+        
+
+        <div class="testimonial-body">
+          {{ testimonial_node.body.value | raw }}
+        </div>
+        
+        <div class="testimonial-footer">v
+        <h3 class="testimonial_author">{{ testimonial_node.label }}</h3>
+          <p class="testimonial_position">{{ testimonial_node.field_author_position.value | raw }}</p>    
+        </div>
+        
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  </div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+<script>
+(function (Drupal) {
+  Drupal.behaviors.testimonialSlider = {
+    attach: function (context, settings) {
+      const slides = document.querySelectorAll('#testimonial-slider .views-row');
+      const slideContainer = document.querySelector('#testimonial-slider .view-content');
+      const totalSlides = slides.length;
+
+console.log(totalSlides)
+      if (totalSlides <= 1) {
+        // If there’s only one slide, don't auto-slide
+        return;
+      }
+
+      let currentSlide = 0;
+      const slideInterval = 5000; // 5 seconds
+
+      function showSlide(index) {
+        const offset = -index * 100;
+        slideContainer.style.transform = `translateX(${offset}%)`;
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      showSlide(currentSlide);
+      let slideTimer = setInterval(nextSlide, slideInterval);
+
+      document.getElementById('next-slide').addEventListener('click', function () {
+        clearInterval(slideTimer);
+        nextSlide();
+        slideTimer = setInterval(nextSlide, slideInterval);
+      });
+
+      document.getElementById('prev-slide').addEventListener('click', function () {
+        clearInterval(slideTimer);
+        prevSlide();
+        slideTimer = setInterval(nextSlide, slideInterval);
+      });
+    }
+  };
+})(Drupal);
+
+</script>
+
+
+
+
+
+
+<div class="container caseGrid 1row 2column " id="caseStudy" style="padding-top: 60px;padding-bottom: 60px;">
+    <h2 class="text-center">Other Transformations Executed</h2>
+    <div class="view-content">
+
+        {% if other_case_studies %}
+            {% for case_study_data in other_case_studies %}
+                {% set case_study = case_study_data.node %}
+
+                {% set categories = case_study_data.categories %}
+
+                
+                <div class="col-md-6 col-sm-12 case-study-box views-row">
+                    <span class="views-field views-field-field-case-study-category">
+                        <span class="field-content caseStudyGridCategory">
+                              {% for category in categories %}
+                            <span class="field-content caseStudyGridCategory">
+                                <a href="/customer-stories/category/{{ category.id() }}" hreflang="en">{{ category.label() }}</a>
+                            </span>
+                        {% endfor %}
+                        </span>
+                    </span>
+
+<div class="views-field views-field-title"><span class="field-content">
+
+<a href="{{ path('entity.node.canonical', {'node': case_study.id()}) }}" hreflang="en">{{ case_study.label }}</a>
+
+</span></div>
+
+<div class="views-field views-field-view-node hr-hyper"><span class="field-content">
+<a style="color:#1b7ec1;" class="cymetrix_button_icon" href="{{ path('entity.node.canonical', {'node': case_study.id()}) }}" hreflang="en">Read more</a>
+
+</span></div>
+
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No other case studies available at the moment.</p>
+        {% endif %}
+    </div>
+</div>      
+
+
+
+
+
+
+
+      <div class="container case_study_about">
+           
+           <div class="row">
+               <div class="col-md-8 col-sm-12">
+                   <h2>About Cymetrix Software</h2>
+                   <p>{{ field_case_study_about|raw}}</p>
+               </div>
+               <div class="col-md-4 col-sm-12">
+                    {{ field_casestudy_about_image|raw}}
+               </div>
+           </div>
+      </div>
+      
+      
+      
+   </body>
+</html>
