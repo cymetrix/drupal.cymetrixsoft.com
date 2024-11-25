@@ -1,0 +1,1022 @@
+.positional_banner_left_text{
+        width:100% !important;
+    }
+
+
+@media screen and (max-width:991px) {
+ 
+     .partners_partner_grid3 .az-column:nth-child(2) .az-text{
+        border-right-width: 0px !important;
+            border-left-width: 0 !important;
+     }
+    .data_analytics_card_layout{
+         padding:0;
+    }
+     .navbar-expand-lg .navbar-nav .nav-level-2{
+        position: inherit;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+     }   
+    .nav-level-2 .menu-item {
+    height: auto;
+    border: none;
+    width: 100%;
+}
+    .dropdown-item.active, .dropdown-item:active{
+        color:black;
+    }
+    .nav-level-1>li{
+        padding:0;
+    }
+    
+    .nav-level-1 li{
+            width: auto;
+    height: auto;
+    }
+    .navbar-expand-lg .navbar-nav .nav-level-1 {
+    position: fixed;
+    right: 4%;
+     left: 0%; 
+    position: absolute;
+    width: auto;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 14px 6px rgba(0, 0, 0, 0.16);
+    z-index: 99999999;
+    padding: 0;
+}
+
+.menu-item-description{
+    display:none;
+}
+}
+
+@media (min-width: 300px) and (max-width: 425px) {
+    .footer_slogan_secondry p{
+        font-size: 40px !important;
+        line-height: 44px !important;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 991) {
+     .footer_slogan_secondry p {
+        font-size: 52px !important;
+        font-weight: 700 !important;
+        line-height: 40px !important;
+        
+        }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    
+    .partners_grid .az-column .az-element.az-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 4px solid #1B7EC1;
+    box-sizing: border-box;
+    max-height: 150px;
+    margin: 20px;
+    border-radius: 10px;
+    min-width: 142px;
+    background: #f1f7fb;
+    min-height: 150px;
+    height: 150px;
+    margin: 5%;
+    padding: 25%;
+}
+    
+    .cymetrix_button_icon.custom_button {
+    padding: 2%;
+        padding-right: 10% !important;
+    }
+    .salesforce_banner .az-ctnr.container-fluid {
+    background-image: none;
+}
+    .special_animated_card_hide_parent{
+        positon:relative; 
+    }
+    .special_animated_card_hide{
+        position:sticky !important;
+        top:20% !important;
+    }
+    .salesforce_consulting_icon_grid .col-md-4,     .salesforce_consulting_icon_grid .col-md-8, .cloud_section .col-md-4{
+            display: flex;
+            justify-content: center;
+            max-width: 100% !important ;
+            flex: 0 0 100% !important;
+    }
+    .salesforce_card_grid {
+    background: none;
+    padding: 0;
+}
+
+    .salesforce_card_grid .az-element.az-text{
+        background: #fafafa;
+        padding: 3%;
+    }
+    .salesforce_row_grid .salesforce_card_grid:nth-child(2){
+        margin-top:0 !important;
+    }
+     
+    .salesforce_row_grid .col-md-6{
+           -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+    .owl-carousel .owl-item{
+            margin: auto 10px;
+    }
+    .about_container_flex_position, .abt_img_cntr, .abt1, #ourservice_row .col-md-6{
+        width: 100% !important;
+        display: block;
+        max-width: 100% !important;
+            flex: auto !important;
+    }     
+        .col-md-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+    .multicloud_row2 .col-md-4, .salesforce_powered>.col-md-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin: 15px auto;
+    }
+    .salesforce_row_grid .salesforce_card_grid:nth-child(2){
+        margin-top: 15px;
+        border: 0;
+    }
+    .az-carousel {
+        margin: 0% auto !important;
+    }
+.three_to_two_tab .col-md-4,     .long_vertical_grid_flex_og.col-md-4{
+            flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .height100{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .height100 img{
+            width: 350px !important;
+    }
+}
+
+@media (min-width: 576) and (max-width: 991px) {
+    
+    
+    
+
+
+    .container {
+        max-width: 1000px !important;
+    }    
+}
+
+@media (max-width: 767px){
+    
+    .bordered_stats_middle{
+        padding: 20px;
+        border-top: 4px solid white !important;
+        border-bottom: 4px solid white !important;
+        border-left: 0 !important;
+        margin: 20px ;
+        border-right: 0 !important;
+    }
+}
+
+
+
+@media screen and (max-width:991px) {
+    
+    
+    .data_analytics_card_layout .cymetrix_button_icon {
+            width: 80%;
+    }
+    .partners_partner_grid3 .col-md-6:nth-child(2){
+        border-top-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 3px;
+        border-right-width: 0px;
+        border-color: #FFFFFF;
+        border-style: solid;
+    }
+    .partners_partner_grid3 img{
+        height:80px;
+        width:auto;
+    }
+    .accordion-body p span{
+        font-size: 16px;
+            line-height: 20px;
+    }
+    .az-accordion.az-accordion--icon-plusminus .accordion-item button[data-bs-toggle=collapse]:after {
+        position: absolute;
+        top: 35%;
+        left: 3%;
+        color: #1B7EC1;
+        background: #F4F4F4;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        margin: auto;
+        text-align: center;
+        justify-content: unset;
+        display: flex;
+        font-size: 20px;
+        justify-content: center;
+        vertical-align: middle;
+        padding: 0%;
+    }
+.az-accordion.accordion .accordion-item .accordion-button {
+    padding: 15px 0 15px 40px;
+}
+.az-accordion.az-accordion--icon-plusminus .accordion-item button[data-bs-toggle=collapse][aria-expanded=true]:after {
+    position: absolute;
+    top: 35%;
+    left: 3%;
+    color: #1B7EC1;
+    background: white;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-size: 38px;
+    font-size: 20px;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 0%;
+}
+.accordion-item button{
+    font-weight:500;
+    font-size:18px;
+    line-height:20px;
+    background:#FAFAFA !important;
+}
+    
+    .positional_banner_left_text{
+        width:100% !important;
+    }
+    .salesforce_banner .az-ctnr.container-fluid {
+    background-image: linear-gradient(to bottom, #E3F2FD, #E3F2FD 35%, #E3F2FD 10%, #E3F2FD 32%, rgba(27, 126, 193, -5.5), rgba(27, 126, 193, -5.5));
+}
+
+    .positional_banner_left_text p, .positional_banner_left_text figure.image{
+            display: inline !important;
+    }
+    
+    
+    .overlay_section .overlay_content{
+            padding-left: 5%;
+    padding-right: 5%;
+
+    }
+    .banner-title{
+            position: absolute;
+    top: 20%;
+    left: 0;
+    }
+    .abt1 .hover_leftborder{
+        margin:10px auto ;
+    }
+    .about_container_flex_position {
+        background: #FAFAFA;
+        margin: 10px auto;
+    }
+        
+    .flex_aboutcontainer{
+            display: flex;
+            padding: 10px;
+    }
+    .flex_aboutcontainer figure{
+        margin: auto 10px auto 0;
+        padding: 20px;
+    }
+    
+    
+    .flex_aboutcontainer figure img{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .abt_img_cntr img.az-image-content{
+        background-color: #1B7EC1;
+        width: 100%;
+        padding-left: 35%;
+        padding-right: 35%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .accordion-body p span{
+            font-size: 18px;
+    line-height: 22px;
+    }
+    
+    .partners_partner_grid3{
+        /*display:flex;*/
+    }
+    .partners_partner_grid3 .az-column{
+        width:50%;
+    }
+    
+
+    .partners_partner_grid3  p span{
+        font-size: 18px !important;
+        line-height: 20px;
+    }    
+    .partners_partner_grid3 .az-column p span{
+        font-size: 18px !important;
+        line-height: 20px;
+    }
+            
+    .grid_salesforce {
+        padding:0 !important;
+    }
+    .certification_card_text p {
+        margin: auto;
+        padding: 10px;
+    }
+    .certification_card_text{
+    /*min-height: 220px;*/
+    height: auto;
+    }
+    .grid_salesforce:nth-child(2){
+        padding: 0;
+        margin: 7px auto;    
+    }
+    
+    .salesforce_consulting_grid_subrow{
+        display:flex;
+    }
+    .salesforce_consulting_grid_subrow .az-column{
+        width:50%;
+        padding:7px;
+    }
+    
+    #data_analytics_bg p {
+    border-left: none;
+    padding: 25px;
+}
+
+.discover_more_img .animated-paragraph p span{
+    font-weight: 600;
+    font-size: 22px !important;
+    line-height: 28px;
+}
+
+
+.discover_more_img .animated-paragraph p a span{
+font-weight: 400;
+    font-size: 16px !important;
+    line-height: 20px;
+    
+}
+.owl-item{
+    min-width:auto;
+}
+.discover_more .owl-controls{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+}
+
+.discover_more .owl-controls .owl-prev:before, .discover_more .owl-controls .owl-prev:after ,
+.discover_more .owl-controls .owl-next:before, .discover_more .owl-controls .owl-next:after
+{
+    content:none !important;
+}
+.discover_more .owl-controls .owl-prev , 
+.discover_more .owl-controls .owl-next{
+   width: 20px;
+    text-align: left;
+    background: white !important;
+    color: #1B7EC1;
+    font-size: 31px;
+    border: 1px solid #1B7EC1 !important;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    height: auto !important;
+}
+
+.primary_footer{
+    width:85% !important;
+}
+.container {
+    max-width: 1040px !important;
+}
+    .home_transformation.az-carousel {
+    margin: 0;
+}
+    .owl-carousel .owl-item{
+            /*margin: 0 20px;*/
+    }
+
+  .menu-toggle {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .bar:nth-child(2) {
+    margin: 5px 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+    #home_banner_row img {
+    width: 100%;
+    height: 580px;
+    /*object-position: -320px 50px;*/
+    max-height: 580px;
+
+}
+    
+#banner-position-elements .animated-paragraph p span {
+    color: #FFF;
+    text-align: center !important;
+    font-size: 34px !important;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 33px !important;
+}
+#banner-position-elements p{
+    line-height: 20px !important;
+    padding: 35px;
+}
+#banner-position-elements h2 {
+    font-size: 64px !important;
+    font-weight: 700 !important;
+    opacity:0.3;
+}
+#banner-position-elements h2 span{
+        font-size: 74px !important;
+}
+.mobile_nav{
+    display:block !important;
+}
+
+#web_nav{
+    display:none !important;
+}
+
+.flexNav{
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+}
+.flexNav .mob_logo img{
+    height:28px;
+}
+
+.flexNav .nav_contact a{
+    color:#161616;
+    font-size:18px;
+    font-weight:400;
+    line-height:21.11px;
+}
+
+.justify-content-end{
+    padding-left: 10px !important;
+    background: white;
+}
+.justify-content-end li{
+    font-size: 18px;
+    font-weight: 600;
+}
+    
+.banner_contact,.banner_explore{
+    display:none;
+}
+.flexNav.container.cymetrix_container{
+    padding:0.8rem 1rem !important;
+    background: #E0E0E099;
+}
+.flexNav.container.cymetrix_container p{
+
+    font-weight: 800;
+    font-size: 18px !important;
+    margin: 0;
+}
+#navbarNav1{
+    background:white;
+}
+    
+    
+#navbarNav1 nav ul{
+    padding:0.8rem 1rem !important;
+}
+.navbar-toggler{
+    border: none;
+}
+    
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none !important;
+}
+.navbar-toggler-icon {
+    width: 1.2em !important;
+    height: 1.2em !important;
+}
+h2 {
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    line-height: 30px !important;
+}
+#home-services-col1 h2, #home-services-col2 h2 {
+    font-size: 20px;
+}
+#home-services-col1 figure, #home-services-col2 figure{
+    background:none;
+}
+#home-services-col1 figure img, #home-services-col2 figure img{
+    height:40px;
+}
+#ourservice_row .az-column {
+    margin: auto;
+    /*padding: 0;*/
+}
+p {
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 16.42px !important;
+}
+    
+    #home-services-col1 h5, #home-services-col2 h5{
+            line-height: 24px;
+    }
+    
+    
+#home-services-col1, #home-services-col2 {
+    padding:0;
+    min-height: 348px;
+    /*max-width: 350px;*/
+    margin: 5px auto !important;
+}    
+
+
+#home-services-col1 .animated-paragraph, #home-services-col2 .animated-paragraph {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.our-services-slogan h3{
+        font-size: 40px;
+}
+#our-services-section a{
+    font-size:14px;
+}
+.cymetrix_button_icon::after{
+    font-size:14px;
+}
+#custom-video video{
+        width: 130%;
+    margin-left: -15%;
+}
+
+.custom-controls {
+    transform: translate(-50%,-175%);
+}
+.az-carousel{
+        margin: 10% auto;
+}
+    
+
+.featured_trans_btn span{
+    font-size:14px !important;
+}
+.cymetrix_button_icon{
+    font-size: 14px !important;
+}
+.featured_transformation_image img{
+    opacity:1;
+}
+.feature_column_col{
+        height: 380px;
+        padding:10px;
+}
+.featured_transformation p:nth-child(2) span{
+    font-size:20px !important;
+    color:white;
+    line-height: 24px;
+}    
+.featured_transformation .cymetrix_button_icon span{
+    color:white;
+}
+.featured_transformation hr{
+    border-top: 2px solid white;
+    opacity: 1;
+}
+    
+    .approach-grid_col{
+        height: 250px;
+    }
+.approach-grid_col img{
+    height:200px;
+    object-fit:cover
+}
+    
+    .approach-grid_col .positioned-bottom-left{
+            top: 76%;
+            height:28px;
+    }
+    
+.states-statistics h2{
+    font-size:40px !important;
+}
+    
+.states-statistics > div:nth-child(2){
+    
+}
+    
+    
+    
+    
+
+.feature_column_col .featured_transformation_image::before {
+    background: #000000;
+}
+.feature_column_col .featured_transformation {
+    color: #FFFFFF;
+}
+.featured_trans_btn{
+        color: white;
+}
+    
+.cloud_card p span, .animated-paragraph p span{
+    font-weight:400;
+    font-size:18px !important;
+    line-height:24px;
+}
+.cloud_card h3 span, .animated-paragraph h3 span{
+    font-size: 20px !important;
+    font-weight: 600;
+    line-height: 32px;    
+
+}    
+
+.web_primary_footer{
+    display:none;
+}
+.mobile_primary_footer{
+    display:block;
+}
+.footer_slogan p {
+    color: #FFF;
+    font-size: 24px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: 29px !important;
+    margin: 30px auto;
+}
+
+.bottom_footer {
+    display: block;
+}
+.bottom_footer .ulone {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    color: white;
+    justify-content: space-between;
+}
+.ultwo {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.social_links_list {
+    width: 36px;
+    height: 36px;
+    margin: auto 5px;
+    display: inline-block;
+}
+.social_links {
+    padding: 0;
+    display: flex;
+}
+.logo_social{
+        display: block;
+}
+    
+    
+    #parentsvg{
+        height:auto;
+    }
+    
+    /*SalesFoce Page */
+    
+.salesforce_banner {
+        background-color: #e3f2fd;
+    background-image: url(/sites/default/files/2024-02/Union.png?fid=111);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    /*background-position: 43% calc(100% + -6px) !important;*/
+    /*background-size: 420px;*/
+    padding-bottom:0 !important;
+        background-position: bottom !important;
+            background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 0 !important;
+}
+.positional_banner_left_text figure {
+    background: transparent;
+    padding: 0;
+    display: block;
+    margin: 4% auto;
+}
+.salesforce_banner .positional_banner_left_text {
+    z-index: 1;
+    left: 0;
+    top: 5% !important;
+    width: 100% !important;
+    padding: 0;
+    text-align: center;
+}
+.banner-left-border span {
+    font-size: 32px !important;
+    font-weight: 400;
+    line-height: 37.54px;
+}
+
+.salesforce_banner .az-moveable-element h2 {
+    line-height: normal !important;
+    border-left: none;
+    padding-left: 0;
+}
+.salesforce_cycle img{
+    height:auto !important;
+}
+
+.salesforce_row_grid .salesforce_card_grid:first-child{
+    width: 50%;
+
+}
+
+.salesforce_row_grid .salesforce_card_grid:nth-child(2){
+    width: 50%;
+}
+.cymetrix_button_icon.custom_button{
+        padding-right: 16%;
+}
+    
+    
+#dadadadadada{
+    background-size: cover !important;
+    overflow: hidden;
+}
+
+#dadadadadada > div{
+    padding-left:0;
+    height: 500px !important;
+    width:100%;
+}
+#dadadadadada>div>div{
+    height: 100%;
+    width: 100%;
+}
+
+#dadadadadada div:first-child{
+    padding-left:0 !important;
+}
+#dadadadadada>div>div p{
+    text-align:center;
+}
+
+#dadadadadada>div>div>div{
+ margin:auto;
+}
+#data_analytics_bg h2{
+    line-height: 30px !important;
+    text-align:center;
+}
+#data_analytics_bg h2 span{
+    font-size:20px !important;
+}
+
+h2 span{
+    font-size:28px !important;
+}
+
+.certification_card {
+    height: 142px;
+    margin: 20px auto;
+}
+
+.certification_partners_grid p span{
+    font-size:18px !important;
+}
+.certification_img img{
+    width:100%;
+    height:auto;
+}
+.salesforce_card_row .card-header{
+    padding-bottom: 0;
+        font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+}
+.salesforce_card_row .card-body{
+     padding-top: 0;   
+}
+
+.az-element.az-container.dxpr.az-ctnr > .az-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: auto;
+    padding-left: 0;
+    padding-right: 0;
+    background-position:bottom;
+}
+.overlay_section {
+        background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.overlay_section{
+    height:auto;
+}
+.overlay_content h2 span {
+    font-size: 20px !important;
+}
+.cymetrix_button_icon.white_icon{
+    color:white;
+}
+.cymetrix_button_icon.custom_button{
+        padding-right: 80px !important;    
+}
+.blog-title {
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    left: 0 !important;
+}
+.blog-title h1 {
+    font-weight: 700;
+    font-size: 32px !important;
+    border-left: 4px solid #1B7EC1;
+    padding: 15px;
+}
+#single_blog_banner  {
+    width: auto !important;
+}
+
+#about_positional{
+        margin-top: 0;
+    margin-bottom: 0;
+}
+    
+    
+.abt_spec_grid_inner_sec{
+        height: 100%;
+    padding: 2%;
+    background: rgb(250, 250, 250);
+}
+#our-services-section .container,  .container-sm {
+    max-width: max-content !important
+}
+    
+.specializations_grid h3 span{
+    font-size:20px !important;
+}
+.specializations_grid p span{
+    font-size:18px !important;
+    line-height: 24px;
+}
+.our_leadership p span{
+    font-size:18px !important;
+    line-height:24px;
+}
+.abt_parent h4 span{
+    font-size:18px;
+}
+.abt_parent p span{
+    font-size:18px !important;
+    line-height:24px;
+}
+.subleader_intro{
+    display: flex;
+    justify-content: center;
+}
+
+.subleader_intro figure{
+    background-color: transparent;
+    border-radius: 40px;
+    padding: 0;
+    margin: 0.5rem 0 0 1rem;
+}
+.abt_spec_grid_inner_sec figure{
+        margin: 0 !important;
+        padding-bottom:10px;
+}
+.cloud_card figure{
+        width: 60px;
+    height: 60px;
+    padding:10px !important;
+}
+    
+    .cloud_card figure img{
+        width: 30px;
+        height: 30px;
+    }
+.cloud_section .row .az-column{
+    margin:10px auto;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 1000px !important;
+    }
+}
+
+

@@ -1,0 +1,15 @@
+base:
+  version: 1.0.0
+  css:
+    theme:
+      css/style.css: {}
+      css/customStyle.css: {}
+      css/mobile.css: {}
+      css/bootstrap.min.css: {}
+      fonts/static/WorkSans-Regular.ttf: {}
+
+  js:
+      js/jquery.min.js: {}
+      js/bootstrap.min.js: {}
+
+    #   js/script.js: {}
