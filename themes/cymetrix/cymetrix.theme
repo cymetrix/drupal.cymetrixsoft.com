@@ -1,0 +1,70 @@
+<?php
+use Drupal\node\Entity\Node;
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+function cymetrix_preprocess_image_widget(array &$variables)
+{
+    $data = &$variables['data'];
+
+    // This prevents image widget templates from rendering preview container HTML
+    // to users that do not have permission to access these previews.
+    // @todo revisit in https://drupal.org/node/953034
+    // @todo revisit in https://drupal.org/node/3114318
+    if (isset($data['preview']['#access']) && $data['preview']['#access'] === false) {
+        unset($data['preview']);
+    }
+}
+
+function cymetrix_preprocess_page(&$variables)
+{
+    $nids = \Drupal::service('database')
+        ->query('SELECT nid FROM {node} WHERE type = :article', [':article' => 'article'])
+        ->fetchCol();
+    $articles = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $variables['articles'] = $articles;
+
+    $nids_2 = \Drupal::service('database')
+        ->query('SELECT nid FROM {node} WHERE type = :job', [':job' => 'job'])
+        ->fetchCol();
+    $jobs = \Drupal\node\Entity\Node::loadMultiple($nids_2);
+    $variables['jobs'] = $jobs;
+
+    $query = \Drupal::database()->select('node', 'n');
+    $query->fields('n', ['nid'])->condition('n.type', 'article');
+
+    $query->join('node__field_tags', 'ft', 'n.nid = ft.entity_id');
+    $query->join('taxonomy_term_field_data', 't', 'ft.field_tags_target_id = t.tid');
+    $query->condition('t.name', 'featured');
+
+    $nids_3 = $query->execute()->fetchCol();
+
+    $featured_articles = \Drupal\node\Entity\Node::loadMultiple($nids_3);
+    $variables['featured_articles'] = $featured_articles;
+}
+
+function cymetrix_preprocess_webform_element(&$variables)
+{
+    // Check if the element is an input element and not hidden.
+    if ($variables['element']['#type'] == 'textfield' && empty($variables['element']['#type_hidden'])) {
+        // Add the form-control class to the input element.
+        $variables['attributes']['class'][] = 'form-control';
+    }
+}
+
+function cymetrix_preprocess_node(&$variables)
+{
+    if ($variables['node']->getType() == 'article') {
+        $query = \Drupal::entityQuery('node')
+            ->condition('type', 'article')
+            ->condition('status', 1)
+            ->condition('field_tags.entity.name', 'featured');
+        $query->accessCheck(true);
+
+        $featured_article_nids = $query->execute();
+        $featured_articles = Node::loadMultiple($featured_article_nids);
+        $variables['featured_articles'] = $featured_articles;
+    }
+}

@@ -1,0 +1,105 @@
+<div class="row">
+			<div class="col-lg-3 mb-3">
+				<a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap" style="margin-bottom: 1.5rem!important;">
+
+					<img src="{{ file_url('public://assets/white-logo.png') }}" alt="Logo">
+				</a>
+				<ul class="social_links">
+					<li class="social_links_list">
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
+							<circle cx="20" cy="20" r="19.5" fill="#161616" stroke="white"/>
+							<path d="M24.8678 17.3336H21.749V15.5558C21.749 14.6385 21.8234 14.0607 23.1319 14.0607H24.7847V11.234C23.9804 11.1505 23.1717 11.1096 22.3622 11.1114C19.9618 11.1114 18.21 12.5843 18.21 15.2883V17.3336H15.5557V20.8891L18.21 20.8882V28.8891H21.749V20.8865L24.4617 20.8856L24.8678 17.3336Z" fill="white"/>
+						</svg>
+					</li>
+					<li class="social_links_list">
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
+							<circle cx="20" cy="20" r="19.5" fill="#161616" stroke="white"/>
+							<path d="M16.6158 26.6666H13.333V16.8181H16.6158V26.6666ZM14.9751 15.505C14.067 15.505 13.333 14.769 13.333 13.8629C13.333 12.9569 14.0684 12.2222 14.9751 12.2222C15.8798 12.2222 16.6158 12.9582 16.6158 13.8629C16.6158 14.769 15.8798 15.505 14.9751 15.505ZM28.434 26.6666H25.2779V21.8737C25.2779 20.7306 25.2562 19.2606 23.6372 19.2606C21.9938 19.2606 21.741 20.5054 21.741 21.791V26.6666H18.5855V16.8109H21.6149V18.1575H21.6576C22.0791 17.3828 23.1093 16.566 24.6456 16.566C27.8431 16.566 28.434 18.6073 28.434 21.2611V26.6666Z" fill="white"/>
+						</svg>
+					</li>
+					<li class="social_links_list">
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
+							<circle cx="20" cy="20" r="19.5" fill="#161616" stroke="white"/>
+							<path d="M13.5756 13.3335L18.564 20.606L13.333 26.6668H14.448L19.0581 21.3255L22.7217 26.6668H26.2353L21.0153 19.0572L25.9557 13.3335H24.8414L20.5219 18.3376L17.0892 13.3335H13.5756Z" fill="white"/>
+						</svg>
+					</li>
+					<li class="social_links_list">
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
+							<circle cx="20" cy="20" r="19.5" stroke="white"/>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M27.666 23.2494C27.666 25.6853 25.6843 27.667 23.2484 27.667H16.0836C13.6477 27.667 11.666 25.6853 11.666 23.2494V16.0846C11.666 13.6487 13.6477 11.667 16.0836 11.667H23.2484C25.6843 11.667 27.666 13.6487 27.666 16.0846V23.2494ZM19.666 16.9597C18.1732 16.9597 16.9587 18.1742 16.9587 19.667C16.9587 21.1598 18.1732 22.3743 19.666 22.3743C21.1588 22.3743 22.3733 21.1598 22.3733 19.667C22.3733 18.1742 21.1588 16.9597 19.666 16.9597ZM19.666 23.8733C17.3466 23.8733 15.4597 21.9864 15.4597 19.667C15.4597 17.3476 17.3466 15.4607 19.666 15.4607C21.9854 15.4607 23.8723 17.3476 23.8723 19.667C23.8723 21.9864 21.9854 23.8733 19.666 23.8733ZM15.6462 14.4678C15.6462 15.0776 15.1519 15.5719 14.5422 15.5719C13.9324 15.5719 13.4381 15.0776 13.4381 14.4678C13.4381 13.858 13.9324 13.3637 14.5422 13.3637C15.1519 13.3637 15.6462 13.858 15.6462 14.4678ZM14.9757 14.4628C14.9757 14.705 14.7794 14.9014 14.5372 14.9014C14.2949 14.9014 14.0986 14.705 14.0986 14.4628C14.0986 14.2205 14.2949 14.0242 14.5372 14.0242C14.7794 14.0242 14.9757 14.2205 14.9757 14.4628Z" fill="white"/>
+						</svg>
+					</li>
+				</ul>
+			</div>
+			<div class="col-6 col-lg-2 offset-lg-1 mb-3">
+
+			</div>
+			<div class="col-6 col-lg-2 mb-3">
+				<h5>Guides</h5>
+				<ul class="list-unstyled">
+					<li class="mb-2">
+						<a href="/docs/5.3/getting-started/">Getting
+														                                    started</a>
+					</li>
+					<li class="mb-2">
+						<a href="/docs/5.3/examples/starter-template/">Starter
+														                                    template</a>
+					</li>
+					<li class="mb-2">
+						<a href="/docs/5.3/getting-started/webpack/">Webpack</a>
+					</li>
+					<li class="mb-2">
+						<a href="/docs/5.3/getting-started/parcel/">Parcel</a>
+					</li>
+					<li class="mb-2">
+						<a href="/docs/5.3/getting-started/vite/">Vite</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-6 col-lg-2 mb-3">
+				<h5>Projects</h5>
+				<ul class="list-unstyled">
+					<li class="mb-2">
+						<a href="https://github.com/twbs/bootstrap" target="_blank" rel="noopener">Bootstrap
+														                                    5</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://github.com/twbs/bootstrap/tree/v4-dev" target="_blank" rel="noopener">Bootstrap
+														                                    4</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://github.com/twbs/icons" target="_blank" rel="noopener">Icons</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://github.com/twbs/rfs" target="_blank" rel="noopener">RFS</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://github.com/twbs/examples/" target="_blank" rel="noopener">Examples
+														                                    repo</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-6 col-lg-2 mb-3">
+				<h5>Community</h5>
+				<ul class="list-unstyled">
+					<li class="mb-2">
+						<a href="https://github.com/twbs/bootstrap/issues" target="_blank" rel="noopener">Issues</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://github.com/twbs/bootstrap/discussions" target="_blank" rel="noopener">Discussions</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://github.com/sponsors/twbs" target="_blank" rel="noopener">Corporate
+														                                    sponsors</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://opencollective.com/bootstrap" target="_blank" rel="noopener">Open
+														                                    Collective</a>
+					</li>
+					<li class="mb-2">
+						<a href="https://stackoverflow.com/questions/tagged/bootstrap-5" target="_blank" rel="noopener">Stack
+														                                    Overflow</a>
+					</li>
+				</ul>
+			</div>
+		</div>

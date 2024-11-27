@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Blogs</title>
+    
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" ></script>
+</head>
+
+
+<body>
+
+ <header id="web_nav" class="container cymetrix_container navbar navbar-expand-lg navbar-light" >
+        <a class="navbar-brand" href="#">
+            {#<img src="{{ file_url('public://assets/logo.png') }}" alt="Logo">#}
+            <a href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            {{ page.primary_menu }}
+        </div>
+    </header>
+    
+    <header class="mobile_nav navbar navbar-expand-lg navbar-light" >
+        <div class="container cymetrix_container">
+            <div class="flexNav">
+                <a class="mob_logo" href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+    
+    
+            <div class="nav_contact">
+            		<a href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us
+            		<img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/Group%207.png" alt="contact icon">
+            		</a>
+        	    </div>
+        
+            </div>
+                
+        </div>
+        </header>
+        
+        <nav class="mobile_nav mobMenu navbar navbar-expand-lg navbar-light" style="background-color:#E0E0E099;padding: 0px !important;">
+             <div class="flexNav container cymetrix_container">
+                    <p>Home</p>
+
+                    
+                    <div class="menu-toggle" onclick="this.classList.toggle('open')" data-toggle="collapse" data-target="#navbarNav2"
+                    aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+                      <div class="bar"></div>
+                      <div class="bar"></div>
+                      <div class="bar"></div>
+                    </div>
+
+                    
+                </div>
+                
+            
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav2">
+                    {{ page.primary_menu }}
+                </div>    
+
+
+        </nav>
+   
+
+
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="page">
+            
+            
+             <style>
+       .all_categories {
+                display:flex;
+                justify-content:center;
+            }
+            .all_categories li {
+                list-style-type: none;
+                margin: auto 10px;
+            }
+       
+       .dropdown-menu.nav-level-3.show{
+           top:35px;
+       }
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        .blog-post {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            position:relative;
+            margin: 10px auto;
+            margin-left:0;
+        }
+        .blog-post:hover{
+            border-bottom: 4px solid #1B7EC1;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            object-fit:contain;
+        }
+        .latest-articles {
+            margin-bottom: 30px;
+        }
+        
+        .blog-post img{
+            width:444px;
+            height:320px;    
+        }
+        .blog-heading{
+            font-size:20px;
+            font-weight:600;
+                margin: 15px auto;
+        }
+        .blog-heading a{
+            color:#161616;
+        }
+        .blog_section_heading{
+            font-size: 26px;
+            font-weight: 500;
+            margin: 15px auto;
+        }
+        .featured-blog-img img{
+           width: 225px;
+           height: 75px;
+        }
+        .featured-blog-title h4{
+            font-weight:500;
+            font-size:18px;
+        }
+        .featured-blog-title{
+            margin-left:0px;
+        }
+         
+        
+        .featured-blog-post{
+            display:flex;
+                margin: 15px auto;
+        }
+        #blog-banner{
+         width:1512px;
+         height:620px;
+         background-color:#e3f2fd;
+         position: relative;
+        }
+        .right_info img{
+            width:100%;
+        }
+        .right_info{
+            height: 512px;
+    width: 682px;
+    position: absolute;
+    right: 5%;
+    bottom: -10%;
+        }
+        .banner-title{
+            position: absolute;
+            top: 20%;
+        }
+        .banner-title h1{
+            font-size: 54px;
+            font-weight: 700;
+            border-left: 4px solid #1B7EC1;
+            padding: 15px;
+        }
+        .cymetrix_button_icon.custom_button {
+    padding: 5% !important;
+    background: #1B7EC1;
+    color: white;
+    padding-right: 15% !important;
+}
+.section_heading {
+    font-weight:600;
+    font-size:32px;
+}
+.blogNav{
+        position: absolute;
+    bottom: 1%;
+}
+
+
+    </style>
+    
+    
+    
+<div class="az-element az-section salesforce_banner container-fluid-wrapper az-util-vertical-centering" style="background-color:#e3f2fd;background-image: url(/sites/default/files/2024-04/blogImg.jpg);background-repeat: no-repeat;background-position:right bottom;    background-size: contain;" data-az-id="gb9y90774i" data-azat-pid="gb9y90774i" id="gb9y90774i" data-azb="az_section" data-azat-parallax_speed="0" data-azat-parallax_mode="fixed" data-azat-parallax_mobile_disable="no" data-azat-an_infinite="no">
+    <div class="az-ctnr container-fluid" data-azcnt="true"><div class="az-element az-layers" data-az-id="gbiaovnstv" data-azat-pid="gbiaovnstv" id="gbiaovnstv" data-azb="az_layers" data-azat-height="620" data-azat-responsive="no">
+        <div id="gbiaovnstv" class="az-ctnr blog-banner" data-azcnt="true">
+            <div class="az-element az-text container positional_banner_left_text az-moveable-element" style="z-index: 1; left: 3.13162%; top: 19.2%; width: 40.0983%; position:absolute;" id="gboe6z9gcs">
+                <h6><a class="cymetrix_button_icon reverse" href="https://drupal.cymetrixsoft.com">Home</a> / Blogs</h6>
+                <h1>
+                    <span style="font-size:48px;">
+                        <strong>Blogs, News and</strong>
+                    </span><br>
+                    <span style="color:hsl(204,75%,43%);font-size:48px;">
+                        <strong>Podcast&nbsp;</strong>
+                    </span>
+                </h1>
+            </div>
+            {#<div class="az-element az-text az-moveable-element hover-style-gbx9um52ja" style="position:absolute;z-index: 1; left: 4.93699%; top: 52.0968%; width: 10.8747%; height: 9.83871%;" id="gbnfg9gd07"><p><a class="cymetrix_button_icon custom_button ck-link_selected" href="/contact-us">Contact&nbsp;</a></p></div>#}
+            {#<div data-styled-id="rCS1w3zcxh" data-able-snappable="true" data-able-draggable="true" data-able-scalable="true" data-able-padding="true" data-able-clickable="true" class="moveable-control-box     rCS1w3zcxh" style="position: absolute; display: block; visibility: visible; transform: translate3d(47px, 119px, 0px); --zoom: 1; --zoompx: 1px; --moveable-control-padding: 20;"></div>#}
+        </div>
+    </div>
+    <div class="az-element az-image" id="gbzkxa3f5g">
+        <img class="az-image-content lazyload" style="width: 100%;" alt="" title="" />
+    </div>
+    </div>
+</div>
+    
+   <br><br>
+<main class="container animated-paragraph">
+  <h2 class="section_heading text-center">Discover</h2>
+  <ul class="all_categories">
+      <li class="singleCategory"><a href="https://drupal.cymetrixsoft.com/blog">All</a></li>
+      {% for category in categories %}
+      <li class="singleCategory"><a href="{{ category.url }}">{{ category.name }}</a></li>
+      {% endfor %}
+    </ul>
+    
+  <br>
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="latest-articles">
+        <h4 class="blog_section_heading">Latest</h4>
+        <hr>
+        <div class="row">
+          {% if articles %}
+            {% for article in articles %}
+              <article class="col-md-6 col-sm-12 blog-post">
+                {% if article.field_image %}
+                  <img src="{{ file_url(article.field_image.entity.fileuri) }}" alt="{{ article.field_image.alt }}">
+                {% endif %}
+                
+                <h3 class="blog-heading">
+                <a href="{{ path('entity.node.canonical', {'node': article.id}) }}">{{ article.title.value }}</a>
+                  </h3>
+                  
+                <div class="blogNav">
+                  <a class="cymetrix_button_icon" href="{{ path('entity.node.canonical', {'node': article.id}) }}">
+                    <span>Read More</span>
+                  </a>    
+                </div>
+              </article>
+            {% endfor %}
+          {% else %}
+            <p>No articles found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-4 col-sm-12">
+      <div class="featured">
+        <h4 class="blog_section_heading">Featured</h4>
+        <hr>
+        {% for featured_article in featured_articles %}
+          <div class="featured-blog-post">
+            <div class="featured-blog-img">
+              {% set file_uri = featured_article.field_image.entity.fileuri %}
+              {% set file_url = file_url(file_uri) %}
+              <img src="{{ file_url }}">
+            </div>
+            <div class="featured-blog-title">
+              <h4><a href="{{ url('entity.node.canonical', {'node': featured_article.id}) }}">{{ featured_article.title.value }}</a></h4>
+              <p>{{ featured_article.field_short_description.value }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+        </div>
+    </div>
+    
+    
+		
+{% include "themes/contrib/dxpr_theme/templates/footer.html.twig" %}
+
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Execute the removal after 3 seconds
+  setTimeout(function() {
+    // Select all <span> elements with the classes "fade-in" and "active"
+    var spans = document.querySelectorAll("span.fade-in.active");
+
+    // Loop through each selected <span> element
+    spans.forEach(function(span) {
+      // Check if the <span> element has no text content
+      if (!span.textContent.trim()) {
+        // Remove the empty <span> element
+        span.parentNode.removeChild(span);
+      }
+    });
+  }, 5000); // 3000 milliseconds = 3 seconds
+});
+
+
+setTimeout(function() {
+    // Select all <span> elements with the classes "fade-in" and "active"
+    var spans = document.querySelectorAll("span.fade-in.active");
+
+    // Loop through each selected <span> element
+    spans.forEach(function(span) {
+      // Check if the <span> element has no text content
+      if (!span.textContent.trim()) {
+        // Remove the empty <span> element
+        span.parentNode.removeChild(span);
+      }
+    });
+  }, 5000); // 3000 milliseconds = 3 seconds
+  
+</script>
+
+		
+</body>
+
+</html>
+
+
+

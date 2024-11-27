@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Your Website</title>
+</head>
+
+<body>
+
+    <header class="container cymetrix_container navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <a href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            {{ page.primary_menu }}
+        </div>
+    </header>
+
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="page">
+            <style>
+                img {
+                    width: 100%;
+                }
+            </style>
+
+            {% block content %}
+            <h1>Blogs</h1>
+{{ dump(nodes) }}
+
+            <div class="row">
+                {% for node in nodes %}
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="blog-post-content">
+                            <h2>{{ node.title.value }}</h2>
+                            <p class="intro">{{ node.body.summary }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endblock %}
+
+        </div>
+    </div>
+
+    {% include "themes/cymetrix/footer.html.twig" %}
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

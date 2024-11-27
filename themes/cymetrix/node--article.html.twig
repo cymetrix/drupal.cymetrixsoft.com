@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ node.title.value }}</title>
+    <link rel="stylesheet" href="path/to/your/custom/styles.css">
+</head>
+<body>
+    <style>
+        #single_blog_banner{
+         width:1512px;
+         height:434px;
+         background-color:#e3f2fd;
+         position:relative;
+        }
+        .blog-title{
+            position:absolute;
+            top: 25%;
+            bottom: 40%;
+            width: 80%;
+        }
+        .blog-title h1{
+            font-weight:700;
+            font-size:54px;
+            border-left: 4px solid #1B7EC1;
+            padding: 15px;
+        }
+        
+             .featured-blog-img img{
+            width:212px;
+            height:140px;
+        }
+        .featured-blog-title h4{
+            font-weight:500;
+            font-size:18px;
+        }
+        .featured-blog-title{
+            margin-left: 15px;
+        }
+        .featured-blog-post{
+            display:flex;
+                margin: 15px auto;
+        }
+        .single_content img{
+            max-width: 100%;
+            object-fit:cover;
+        }
+    </style>
+    <div id="single_blog_banner">
+        <div class="container">
+            <div class="blog-title">
+            <h1>{{ node.title.value }}</h1>                
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="main-content" style="margin-top: -3.7%;">
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-8 single_content">
+                {{ content }}
+            </div>    
+            <div class="col-sm-4">
+<div class="featured">
+    
+                    <h2 class="blog_section_heading">Featured</h2>
+                    <hr>    
+                 
+                    {% for featured_article in featured_articles %}
+                        <div class="featured-blog-post">
+                            <div class="featured-blog-img">
+                                {% set file_uri = featured_article.field_image.entity.fileuri %}
+                                {% set file_url = file_url(file_uri) %}
+                                <img src="{{ file_url }}">
+                            </div>
+                            <div class="featured-blog-title">
+                                <h4><a href="{{ url('entity.node.canonical', {'node': featured_article.id}) }}">{{ featured_article.title.value }}</a></h4>
+                                <p>{{ featured_article.field_short_description.value }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                    
+                </div>                
+            </div>                
+            </div>
+
+        </div>
+    </div>
+<main>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<style>
+    
+@font-face {
+    font-family: 'Work Sans';
+    src: url('./fonts/static/WorkSans-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+body{
+    font-family: 'Work Sans',sans-serif !important;
+}
+
+</style>
+<div class="header container cymetrix_container">
+  <div class="row align-items-center">
+    <!-- Logo at the top for both mobile and web -->
+    <div class="col-12 col-md-3 logo text-center text-md-left mb-3 mb-md-0">
+      <img src="{{ file_url('public://assets/logo.png') }}" alt="Logo">
+    </div>
+
+    <!-- Page name on the left for web -->
+    <div class="col-md-6 d-none d-md-block">
+      {{ page.primary_menu }}
+    </div>
+
+    <!-- Hamburger menu on the right for mobile -->
+    <div class="col-12 col-md-3 text-center text-md-right">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="col-12 d-md-none">
+      {{ page.primary_menu }}
+    </div>
+  </div>
+</div>

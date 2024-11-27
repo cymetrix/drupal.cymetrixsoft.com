@@ -1,0 +1,18 @@
+name: cymetrix
+type: theme
+base theme: false
+libraries:
+  - cymetrix/base
+core_version_requirement: ^10
+regions:
+  content: 'Content'
+  header: 'Header'
+  footer: 'Footer'
+  sidebar: 'Sidebar'
+  primary_menu: 'Primary Menu'
+  footer_first_column: Footer First Column
+  footer_second_column: Footer Second Column
+  footer_third_column: Footer Third Column
+  footer_forth_column: Footer Forth Column
+  footer_fifth_column: Footer Fifth Column
+

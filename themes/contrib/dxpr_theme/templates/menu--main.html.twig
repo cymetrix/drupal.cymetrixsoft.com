@@ -1,0 +1,60 @@
+{% import _self as menus %}
+
+{{ menus.build_menu(items, attributes, 0) }}
+
+{% macro build_menu(items, attributes, menu_level) %}
+  {% if items %}
+    {%
+      set ul_classes = [
+        menu_level == 0 ? 'navbar-nav justify-content-end flex-wrap megamenu',
+        menu_level > 0  ? 'dropdown-menu',
+        'nav-level-' ~ menu_level,
+      ]
+    %}
+    <ul{{ attributes.addClass(ul_classes) }}>
+      {% for item in items %}
+        {{ menus.add_link(item, attributes.removeClass(ul_classes), menu_level) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro add_link(item, attributes, menu_level) %}
+  {%
+    set list_item_classes = [
+      'menu-item',
+      item.is_expanded ? 'dropdown' 
+    ]
+  %}
+  {%
+    set link_class = [
+      menu_level == 0 ? 'nav-link',
+      item.in_active_trail ? 'active',
+      menu_level == 0 and (item.is_expanded or item.is_collapsed) ? 'dropdown-toggle',
+      menu_level > 0 ? 'dropdown-item mycustomemenuclass',
+    ]
+  %}
+  {%
+    set toggle_class = [
+    ]
+  %}
+  <li{{ item.attributes.addClass(list_item_classes) }}>
+      
+    {% if item.below %}
+      {{ link(item.title, item.url, { 'class': link_class, 'aria-haspopup':'false', 'aria-expanded': 'false' }) }}
+      {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
+      <span class="menu-item-description">{{ item.original_link.pluginDefinition.description }}</span>
+    {% else %}
+      <a href="{{ item.url }}" class="{{ link_class|join(' ') }}">{{ item.title }}</a>
+      {% if item.original_link.pluginDefinition.description %}
+        <span class="menu-item-description some">{{ item.original_link.pluginDefinition.description }}</span>
+      {% endif %}
+      
+    {% endif %}
+  </li>
+{% endmacro %}
+
+
+
+
+

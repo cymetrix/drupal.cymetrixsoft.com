@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ node.title.value }}</title>
+	<link rel="stylesheet" href="path/to/your/custom/styles.css">
+</head>
+<body>
+	<style>
+	
+			.single-blog-content p:first-child {
+    background-color: #f1f7fb;
+    padding: 20px 20px;
+    border: solid 2px #1b7ec1;
+    border-radius: 10px;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 18px !important;
+}
+
+	.single-blog-content p{font-size: 16px;}
+
+.single-blog-content ol{ margin-left: 20px;}   	
+.single-blog-content ol li{margin-bottom: 20px; font-size: 16px!important;}
+.single-blog-content ul{ margin-left: 20px;}   
+.single-blog-content ul li::marker { color: #a9a8a8;font-size: 20px;}
+.single-blog-content ul li{margin-bottom: 20px; font-size: 16px!important;}
+
+.single-blog-content h2 {font-size:23px!important;  font-weight:600; line-height:28px!important;}
+.single-blog-content h3 {font-size:18px!important;  font-weight:600;}
+
+
+.single-blog-content h2 {
+    font-size: 19px !important;
+    font-weight: 600;
+    line-height: 25px !important;
+}
+
+.blog-title h1 {
+              
+                font-size:30px!important;
+        font-weight: 800;
+        }
+
+		@media screen and (max-width: 991px){
+		    
+		    
+		    
+		.single_blog_content p{
+            font-weight: 400;
+            font-size: 16px !important;
+            line-height: 23px !important;
+		}
+		
+
+		
+		.blog-title {
+            position: absolute;
+
+            width: 100% !important;
+                left: 3% !important;
+                    top: 25% !important;
+        }
+        .blog-title h1 {
+              
+                font-size: 20px!important;
+        font-weight: 800;
+        }
+}
+
+	
+		.featured-blog-title h4 a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #161616;
+            font-weight: 600;
+            line-height: 21.11px;
+		}
+.field--name-body.field--type-text-with-summary ul li{
+    font-weight: 400;
+    font-size: 18px ;
+    line-height: 24px;
+}
+
+ .single_blog_content ul {
+        padding-left: 2em !important;
+}
+		.main-container section.col-sm-12 {
+			padding: 0;
+		}
+		.region-content {
+			padding: 0;
+		}
+		
+		.field.field--name-body.field--type-text-with-summary h6{
+			line-height: 32px;
+			background: #F1F7FB;
+			padding: 20px;
+			border: 1px solid #1B7EC1;
+			font-size: 24px;
+			border-radius: 15px;
+		}
+		#single_blog_banner{
+			width:100%;
+			height:434px;
+			background-color:#e3f2fd;
+			position:relative;
+			z-index: -1;
+		}
+		.blog-title{
+			position:absolute;
+			top: 25%;
+			bottom: 40%;
+			width: 80%;
+		}
+		.blog-title{
+			font-weight:700;
+			font-size:54px;
+			/*border-left: 4px solid #1B7EC1;*/
+			padding: 15px;
+		}
+		
+		.featured-blog-img img{
+			width:212px;
+			height:140px;
+			object-fit:contain;
+		}
+		.featured-blog-title h4{
+			font-weight:500;
+			font-size:18px;
+		}
+		.featured-blog-title{
+			margin-left: 15px;
+		}
+		.featured-blog-post{
+			display:flex;
+			margin: 15px auto;
+		}
+		.single_content img{
+			max-width: 100%;
+			object-fit: contain;
+			    height: auto;
+		}
+		.blog_section_heading{
+			font-weight: 600 !important;
+			font-size: 26px !important;
+			line-height: 32px !important;
+		}
+		.field--name-body{
+			margin-top: 5%;
+		}
+		.feature_blogs{
+			margin: 10% auto;
+		}
+		
+	@media (max-width: 768px) {
+	
+	.blog-inner-heding{} 
+	    .blog-title { top: 7% !important; }
+	    #single_blog_banner {height:300px;}
+	    
+	}	
+		
+	</style>
+	<div id="single_blog_banner">
+		<div class="container">
+			
+			<div class="blog-title blog-inner-heding">
+			    <h6><a class="cymetrix_button_icon reverse" href="https://drupal.cymetrixsoft.com/">Home</a> / Blogs</h6>
+				<h1>{{ node.title.value }}</h1>                
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="container main-content" style="margin-top: -3.7%;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 single_content single-blog-content">
+					
+					{{ content }}
+				</div>    
+				    <div class="col-xl-4">
+      <div class="featured">
+        <h4 class="blog_section_heading">Featured</h4>
+        <hr>
+        {% for featured_article in featured_articles %}
+          <div class="featured-blog-post">
+            <div class="featured-blog-img">
+              {% set file_uri = featured_article.field_image.entity.fileuri %}
+              {% set file_url = file_url(file_uri) %}
+              <img src="{{ file_url }}">
+            </div>
+            <div class="featured-blog-title">
+              <h4><a href="{{ url('entity.node.canonical', {'node': featured_article.id}) }}">{{ featured_article.title.value }}</a></h4>
+              <p>{{ featured_article.field_short_description.value }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+			</div>
+
+		</div>
+	</div>
+
+
+		{#{% include "themes/contrib/dxpr_theme/templates/footer.html.twig" %}#}
+
+</body>
+</html>
