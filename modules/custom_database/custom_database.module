@@ -1,0 +1,41 @@
+<?php
+
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function custom_database_preprocess_page__blogs(&$variables) {
+  // Fetch data from the external WordPress database.
+  $external_database = new \mysqli('localhost', 'cymetrix_bloguser', 'Kj_{I5GSzR9Y', 'cymetrix_blogs');
+  
+  // Check for a successful connection.
+  if ($external_database->connect_errno) {
+    drupal_set_message(t('Failed to connect to external database: @error', ['@error' => $external_database->connect_error]), 'error');
+    return;
+  }
+
+  // Fetch data.
+  $query = $external_database->query("SELECT post_title, post_content FROM wp_posts WHERE post_status = 'publish' ORDER BY post_date DESC LIMIT 5");
+  
+  // Check for a successful query.
+  if (!$query) {
+    drupal_set_message(t('Failed to fetch data from external database: @error', ['@error' => $external_database->error]), 'error');
+    return;
+  }
+
+  // Fetch the results.
+  $posts = array();
+  while ($row = $query->fetch_assoc()) {
+    $posts[] = $row;
+  }
+
+  // Close the database connection.
+  $external_database->close();
+
+  // Pass the data to the template.
+  $variables['external_data'] = $posts;
+}
+
+
+
+?>
