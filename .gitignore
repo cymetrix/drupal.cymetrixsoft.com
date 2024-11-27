@@ -1,0 +1,15 @@
+# Ignore all .zip files
+*.zip
+*.tar
+*.pack
+
+
+# You can add other files or folders to ignore below
+
+# Example: Ignore node_modules folder
+node_modules/
+.git_backup/
+.git/
+sites/
+# Example: Ignore environment configuration files
+# .env
