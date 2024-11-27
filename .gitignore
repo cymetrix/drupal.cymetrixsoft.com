@@ -10,6 +10,6 @@
 node_modules/
 .git_backup/
 .git/
-sites/default/files/styles
+
 # Example: Ignore environment configuration files
 # .env
