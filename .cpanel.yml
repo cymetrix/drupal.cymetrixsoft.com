@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home3/cymetrix/drupal.cymetrixsoft.com/
+    - export DEPLOYPATH=/home3/cymetrix/public_html/blog/
     - /bin/cp * $DEPLOYPATH
