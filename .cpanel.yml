@@ -2,4 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home3/cymetrix/public_html/blog/
-    - /bin/cp * $DEPLOYPATH
+    - echo "Starting deployment to $DEPLOYPATH"
+    - rm -rf $DEPLOYPATH/*
+    - /bin/cp -r . $DEPLOYPATH
+    - echo "Deployment completed successfully!"
