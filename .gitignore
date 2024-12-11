@@ -10,6 +10,7 @@
 node_modules/
 .git_backup/
 .git/
+sites/default/settings.php
 
 # Example: Ignore environment configuration files
 # .env
