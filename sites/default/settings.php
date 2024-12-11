@@ -885,18 +885,18 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
-$databases['default']['default'] = array (
-  'database' => 'cymetrix_drup223',
-  'username' => 'cymetrix_drup223',
-  'password' => '8J8bp)vS6!',
-  'prefix' => 'drgv_',
-  'host' => 'localhost',
-  'port' => '3306',
-  'isolation_level' => '',
-  'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
+// $databases['default']['default'] = array (
+//   'database' => 'cymetrix_drup223',
+//   'username' => 'cymetrix_drup223',
+//   'password' => '8J8bp)vS6!',
+//   'prefix' => 'drgv_',
+//   'host' => 'localhost',
+//   'port' => '3306',
+//   'isolation_level' => '',
+//   'driver' => 'mysql',
+//   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+//   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+// );
 $settings['config_sync_directory'] = 'sites/default/files/config_Ql9nGp8xcZ3Wv03gnimrcVNBG8mOuTX5XZ7G0MDT74V_7yt3BUaSJf4_fox3whabX_KDT70M3A/sync';
 
 $config['system.logging']['error_level'] = 'verbose';
@@ -911,3 +911,7 @@ $settings['twig.config'] = [
   'cache' => TRUE,
 ];
 
+
+if (file_exists(__DIR__ . '/settings.local.php')) {
+    include __DIR__ . '/settings.local.php';
+}
