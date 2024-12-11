@@ -501,18 +501,25 @@ function dxpr_theme_preprocess_page(&$variables) {
 
   // Load featured category articles
   $query = \Drupal::database()->select('node_field_data', 'nfd');
-  $query->fields('nfd', ['nid'])
-        ->condition('nfd.type', 'article')
-        ->condition('nfd.status', 1); // Ensure the article is published
+$query->fields('nfd', ['nid'])
+      ->condition('nfd.type', 'article')
+      ->condition('nfd.status', 1);
 
-  $query->join('node__field_category', 'nfc', 'nfd.nid = nfc.entity_id');
-  $query->join('taxonomy_term_field_data', 't', 'nfc.field_category_target_id = t.tid');
-  $query->condition('t.name', 'Featured'); // Replace 'Featured' with your featured category name
+$query->join('node__field_category', 'nfc', 'nfd.nid = nfc.entity_id');
+$query->join('taxonomy_term_field_data', 't', 'nfc.field_category_target_id = t.tid');
+$query->condition('t.name', 'Featured', '=');
 
-  $nids_3 = $query->execute()->fetchCol();
+$nids_3 = $query->execute()->fetchCol(); // Fetch only NIDs
 
-  $featured_articles = \Drupal\node\Entity\Node::loadMultiple($nids_3);
-  $variables['featured_articles'] = $featured_articles;
+// Log the NIDs for debugging
+\Drupal::logger('dxpr_theme')->notice('<pre>' . print_r($nids_3, TRUE) . '</pre>');
+
+// Load nodes
+$featured_articles = \Drupal\node\Entity\Node::loadMultiple($nids_3);
+$variables['featured_articles'] = $featured_articles;
+
+
+
 
   // Load all terms in the "Categories" vocabulary.
   $vid = 'categories'; // Replace with your vocabulary ID.

@@ -185,19 +185,10 @@
       <div class="featured">
         <h4 class="blog_section_heading">Featured</h4>
         <hr>
-        {% for featured_article in featured_articles %}
-          <div class="featured-blog-post">
-            <div class="featured-blog-img">
-              {% set file_uri = featured_article.field_image.entity.fileuri %}
-              {% set file_url = file_url(file_uri) %}
-              <img src="{{ file_url }}">
-            </div>
-            <div class="featured-blog-title">
-              <h4><a href="{{ url('entity.node.canonical', {'node': featured_article.id}) }}">{{ featured_article.title.value }}</a></h4>
-              <p>{{ featured_article.field_short_description.value }}</p>
-            </div>
-          </div>
-        {% endfor %}
+
+  {{ drupal_view('taxonomy_term', 'default') }}
+
+
       </div>
     </div>
 			</div>
