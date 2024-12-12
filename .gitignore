@@ -13,7 +13,8 @@ node_modules/
 
 sites/default/settings.local.php
 sites/default/files/
-
+themes/contrib/dxpr_theme/js/minified/main.js
+themes/contrib/dxpr_theme/js/minified/main.min.js
 
 # Example: Ignore environment configuration files
 # .env

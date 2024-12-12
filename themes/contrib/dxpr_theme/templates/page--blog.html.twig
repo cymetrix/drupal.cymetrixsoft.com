@@ -16,7 +16,7 @@
  <header id="web_nav" class="container cymetrix_container navbar navbar-expand-lg navbar-light" >
         <a class="navbar-brand" href="#">
             {#<img src="{{ file_url('public://assets/logo.png') }}" alt="Logo">#}
-            <a href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+            <a href="{{ url('<front>') }}"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -32,12 +32,12 @@
     <header class="mobile_nav navbar navbar-expand-lg navbar-light" >
         <div class="container cymetrix_container">
             <div class="flexNav">
-                <a class="mob_logo" href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+                <a class="mob_logo" href="{{ url('<front>') }}"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
     
     
             <div class="nav_contact">
             		<a href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us
-            		<img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/Group%207.png" alt="contact icon">
+            		<img src="{{ url('<front>') }}sites/default/files/2024-02/Group%207.png" alt="contact icon">
             		</a>
         	    </div>
         
@@ -197,7 +197,7 @@
     <div class="az-ctnr container-fluid" data-azcnt="true"><div class="az-element az-layers" data-az-id="gbiaovnstv" data-azat-pid="gbiaovnstv" id="gbiaovnstv" data-azb="az_layers" data-azat-height="620" data-azat-responsive="no">
         <div id="gbiaovnstv" class="az-ctnr blog-banner" data-azcnt="true">
             <div class="az-element az-text container positional_banner_left_text az-moveable-element" style="z-index: 1; left: 3.13162%; top: 19.2%; width: 40.0983%; position:absolute;" id="gboe6z9gcs">
-                <h6><a class="cymetrix_button_icon reverse" href="https://drupal.cymetrixsoft.com">Home</a> / Blogs</h6>
+                <h6><a class="cymetrix_button_icon reverse" href="{{ url('<front>') }}">Home</a> / Blogs</h6>
                 <h1>
                     <span style="font-size:48px;">
                         <strong>Blogs, News and</strong>
@@ -221,7 +221,7 @@
 <main class="container animated-paragraph">
   <h2 class="section_heading text-center">Discover</h2>
   <ul class="all_categories">
-      <li class="singleCategory"><a href="https://drupal.cymetrixsoft.com/blog">All</a></li>
+      <li class="singleCategory"><a href="{{ url('<front>') }}blog">All</a></li>
       {% for category in categories %}
       <li class="singleCategory"><a href="{{ category.url }}">{{ category.name }}</a></li>
       {% endfor %}

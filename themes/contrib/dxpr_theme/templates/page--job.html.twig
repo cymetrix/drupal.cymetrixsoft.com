@@ -13,7 +13,7 @@
  <header id="web_nav" class="container cymetrix_container navbar navbar-expand-lg navbar-light" >
         <a class="navbar-brand" href="#">
             {#<img src="{{ file_url('public://assets/logo.png') }}" alt="Logo">#}
-            <a href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+            <a href="{{ url('<front>') }}"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -29,12 +29,12 @@
     <header class="mobile_nav navbar navbar-expand-lg navbar-light" >
         <div class="container cymetrix_container">
             <div class="flexNav">
-                <a class="mob_logo" href="https://drupal.cymetrixsoft.com/"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
+                <a class="mob_logo" href="{{ url('<front>') }}"><img src="{{ file_url('public://assets/logo.png') }}" alt="Logo"></a>
     
     
             <div class="nav_contact">
             		<a href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us
-            		<img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/Group%207.png" alt="contact icon">
+            		<img src="{{ url('<front>') }}sites/default/files/2024-02/Group%207.png" alt="contact icon">
             		</a>
         	    </div>
         
@@ -199,7 +199,7 @@ li.job_title>a{
     {#        </div>#}
             
     {#        <div class="right_info">#}
-    {#            <img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/2ba7b7e02074bbfda63797de4c95e3a8.png">#}
+    {#            <img src="{{ url('<front>') }}sites/default/files/2024-02/2ba7b7e02074bbfda63797de4c95e3a8.png">#}
     {#        </div>#}
     {#    </div>#}
     {#</div>#}
