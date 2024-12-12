@@ -11,6 +11,7 @@ node_modules/
 .git_backup/
 .git/
 
+sites/default/settings.php
 sites/default/settings.local.php
 sites/default/files/
 themes/contrib/dxpr_theme/js/minified/main.js
