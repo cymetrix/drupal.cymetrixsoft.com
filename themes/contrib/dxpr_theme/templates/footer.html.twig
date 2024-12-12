@@ -161,10 +161,10 @@
 		<div class="bottom_footer">
 			<ul class="ulone">
 				<li>
-					<a href="https://drupal.cymetrixsoft.com/privacypolicy/">Privacy Policy</a>
+					<a href="{{ url('<front>') }}privacypolicy/">Privacy Policy</a>
 				</li>
 				<li style="margin: 0 3%;">
-					<a href="https://drupal.cymetrixsoft.com/terms-of-use/">Terms of use</a>
+					<a href="{{ url('<front>') }}terms-of-use/">Terms of use</a>
 				</li>
 			</ul>
 			<ul class="ultwo">
@@ -1079,7 +1079,7 @@ $(document).ready(function(){
     z-index: 1000;    top: 45%;">
         <div style="display: -webkit-inline-box;background: #dfebf3;color: white;padding: 10px;border-radius: 15px;">
             <a href="#" data-toggle="modal" style="padding: 0;color:#616161;font-size: 14px;" data-target="#contactUsModal">Contact Us
-            <img src="https://drupal.cymetrixsoft.com/sites/default/files/2024-02/Group%207.png" alt="contact icon" style="height: 22px;" />
+            <img src="{{ url('<front>') }}sites/default/files/2024-02/Group%207.png" alt="contact icon" style="height: 22px;" />
             </a>
         </div>
 </div>
