@@ -21,19 +21,19 @@ RewriteRule ^products/ - [L,R=410]
 RewriteRule ^services/it-security/ - [L,R=410]
 RewriteRule ^contact/ - [L,R=410]
 
-# Force HTTPS for all requests
-# <IfModule mod_rewrite.c>
-#     RewriteCond %{HTTPS} off
-#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]
-# </IfModule>
+Force HTTPS for all requests
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]
+</IfModule>
 
 # Add trailing slash to URLs (except files and query strings)
-# <IfModule mod_rewrite.c>
-#     RewriteCond %{REQUEST_URI} !\.
-#     RewriteCond %{REQUEST_URI} !/$
-#     RewriteCond %{QUERY_STRING} ^$
-#     RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [L,R=301]
-# </IfModule>
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} !\.
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [L,R=301]
+</IfModule>
 
 # Deny access to sensitive files
 <FilesMatch "\.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$">
