@@ -48,7 +48,7 @@ Redirect 301 /Thankyou/ /thankyou/
 
   # Force HTTPS
   RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -57,7 +57,7 @@ Redirect 301 /Thankyou/ /thankyou/
   RewriteCond %{REQUEST_URI} !\.
   RewriteCond %{REQUEST_URI} !/$
   RewriteCond %{QUERY_STRING} ^$
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1/ [L,R=301]
 </IfModule>
 
 
