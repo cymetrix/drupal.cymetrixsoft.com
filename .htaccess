@@ -25,12 +25,13 @@ Redirect 301 /Thankyou/ /thankyou/
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Ensure HTTPS and force single WWW
+  # Ensure HTTPS and WWW without adding extra "www"
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]  # If "www" is not present
+  RewriteCond %{HTTP_HOST} !^www\.www\. [NC]  # Avoid double "www"
   RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Prevent double www
+  # Redirect double "www" to single "www"
   RewriteCond %{HTTP_HOST} ^www\.www\. [NC]
   RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
 
