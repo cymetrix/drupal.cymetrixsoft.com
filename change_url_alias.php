@@ -1,8 +1,19 @@
 <?php
-// Database connection
-$mysqli = new mysqli("localhost", "cymetrix_drup223", "8J8bp)vS6!", "cymetrix_drup223");
+$host = $_SERVER['HTTP_HOST'];
 
-// Check connection
+// Set the database credentials based on the domain
+if ($host === 'www.cymetrixsoft.com') {
+    // Database credentials for https://www.cymetrixsoft.com
+    $mysqli = new mysqli("localhost", "cymetrix_production_db", "8J8bp)vS6!", "cymetrix_drup223");
+} elseif ($host === 'drupal.cymetrixsoft.com') {
+    // Database credentials for https://drupal.cymetrixsoft.com
+    $mysqli = new mysqli("localhost", "cymetrix_drup223", "8J8bp)vS6!", "cymetrix_drup223");
+} else {
+    // Handle error if the domain doesn't match any known configuration
+    die("Unknown domain. Database connection not established.");
+}
+
+// Check the connection
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
