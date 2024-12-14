@@ -1,5 +1,17 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+
 $host = $_SERVER['HTTP_HOST'];
+
+
+var_dump($host); 
+
+
 
 // Set the database credentials based on the domain
 if ($host === 'www.cymetrixsoft.com') {
