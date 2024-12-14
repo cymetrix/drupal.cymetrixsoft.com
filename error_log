@@ -5569,3 +5569,40 @@ LIMIT 1 OFFSET 0; Array
     [:db_insert_placeholder_3] => entity_field_info node_values
     [:db_insert_placeholder_4] => 361
     [:db_insert_placeholder_5] => O:31:"Drupal\dxpr_builder\Entity\Node":30:{s:15:"
+[13-Dec-2024 12:19:40 UTC] Uncaught PHP Exception Drupal\Core\Extension\Exception\UnknownExtensionException: "The module case_study does not exist." at /home3/cymetrix/drupal.cymetrixsoft.com/core/lib/Drupal/Core/Extension/ExtensionList.php line 519
+[13-Dec-2024 12:29:48 UTC] Uncaught PHP Exception Drupal\Core\Database\IntegrityConstraintViolationException: "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'geYmILCfoVXdUlqwNfUOXna8XdPxuVHpRlIXCr8Jceco,GzP' for key 'PRIMARY': INSERT INTO "drgv_captcha_sessions" ("uid", "sid", "ip_address", "timestamp", "form_id", "solution", "status", "attempts") VALUES (:db_insert_placeholder_0, :db_insert_placeholder_1, :db_insert_placeholder_2, :db_insert_placeholder_3, :db_insert_placeholder_4, :db_insert_placeholder_5, :db_insert_placeholder_6, :db_insert_placeholder_7); Array
+(
+    [:db_insert_placeholder_0] => 1
+    [:db_insert_placeholder_1] => geYmILCfoVXdUlqwNfUOXna8XdPxuVHpRlIXCr8Jceco,GzP
+    [:db_insert_placeholder_2] => 103.141.218.146
+    [:db_insert_placeholder_3] => 1734092982
+    [:db_insert_placeholder_4] => webform_submission_contact_node_14_add_form
+    [:db_insert_placeholder_5] => c69c9cddb55430697f77064bb14bc114b68e03a4c1ecd6830550ba21a63fef23
+    [:db_insert_placeholder_6] => 0
+    [:db_insert_placeholder_7] => 0
+)
+" at /home3/cymetrix/drupal.cymetrixsoft.com/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 45
+[13-Dec-2024 12:30:00 UTC] Uncaught PHP Exception Drupal\Core\Database\IntegrityConstraintViolationException: "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'geYmILCfoVXdUlqwNfUOXna8XdPxuVHpRlIXCr8Jceco,GzP' for key 'PRIMARY': INSERT INTO "drgv_captcha_sessions" ("uid", "sid", "ip_address", "timestamp", "form_id", "solution", "status", "attempts") VALUES (:db_insert_placeholder_0, :db_insert_placeholder_1, :db_insert_placeholder_2, :db_insert_placeholder_3, :db_insert_placeholder_4, :db_insert_placeholder_5, :db_insert_placeholder_6, :db_insert_placeholder_7); Array
+(
+    [:db_insert_placeholder_0] => 1
+    [:db_insert_placeholder_1] => geYmILCfoVXdUlqwNfUOXna8XdPxuVHpRlIXCr8Jceco,GzP
+    [:db_insert_placeholder_2] => 103.141.218.146
+    [:db_insert_placeholder_3] => 1734092999
+    [:db_insert_placeholder_4] => webform_submission_contact_node_14_add_form
+    [:db_insert_placeholder_5] => 512911d40484e4103e92532ed91732c7182c2a7f59e76b2dfbddf0d3f8f6d83f
+    [:db_insert_placeholder_6] => 0
+    [:db_insert_placeholder_7] => 0
+)
+" at /home3/cymetrix/drupal.cymetrixsoft.com/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 45
+[13-Dec-2024 12:30:03 UTC] Uncaught PHP Exception Drupal\Core\Database\IntegrityConstraintViolationException: "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'geYmILCfoVXdUlqwNfUOXna8XdPxuVHpRlIXCr8Jceco,GzP' for key 'PRIMARY': INSERT INTO "drgv_captcha_sessions" ("uid", "sid", "ip_address", "timestamp", "form_id", "solution", "status", "attempts") VALUES (:db_insert_placeholder_0, :db_insert_placeholder_1, :db_insert_placeholder_2, :db_insert_placeholder_3, :db_insert_placeholder_4, :db_insert_placeholder_5, :db_insert_placeholder_6, :db_insert_placeholder_7); Array
+(
+    [:db_insert_placeholder_0] => 1
+    [:db_insert_placeholder_1] => geYmILCfoVXdUlqwNfUOXna8XdPxuVHpRlIXCr8Jceco,GzP
+    [:db_insert_placeholder_2] => 103.141.218.146
+    [:db_insert_placeholder_3] => 1734093003
+    [:db_insert_placeholder_4] => webform_submission_contact_node_14_add_form
+    [:db_insert_placeholder_5] => 1a422b3940b6c532abbd40223d7a7e3e2e99fa7cda1898b678d45c829a7d07c6
+    [:db_insert_placeholder_6] => 0
+    [:db_insert_placeholder_7] => 0
+)
+" at /home3/cymetrix/drupal.cymetrixsoft.com/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 45

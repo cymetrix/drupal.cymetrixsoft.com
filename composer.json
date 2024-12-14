@@ -18,6 +18,7 @@
         "composer/installers": "^2.0",
         "drupal/advagg": "^6.0@alpha",
         "drupal/block_field": "^1.0@RC",
+        "drupal/captcha": "^2.0",
         "drupal/core-composer-scaffold": "10.3.1",
         "drupal/core-project-message": "10.3.1",
         "drupal/core-recommended": "10.3.1",

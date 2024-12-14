@@ -1,78 +1,8 @@
-RewriteEngine On
-RewriteRule ^services/spend-analysis/$ - [G]
-RewriteRule ^services/procurement-consulting/$ - [G]
-RewriteRule ^products/$ - [G]
-RewriteRule ^services/it-security/$ - [G]
-
-# Set status 410 for specific URLs
-Redirect 410 /products/
-
-Redirect 301 /about/case-studies/ /customer-stories/
-Redirect 301 /about/company/ /about/
-Redirect 301 /services/sdfc-integration-services/ /services/sfdc-integration/
-Redirect 301 /services/salesforce-development-services/ /services/salesforce-development/
-Redirect 301 /services/salesforce-implementation-services/ /services/salesforce-implementation/
-Redirect 301 /services/salesforce-maintenance-support-services/ /services/salesforce-maintenance-support/
-Redirect 301 /services/data-analytics/ /services/data-science-analytics/
-Redirect 301 /services/marketing-automation-services/ /services/marketing-automation/
-Redirect 301 /services/staff-augmentation-services /services/staff-augmentation/
-Redirect 301 /services/fintech/ /industries/fintech/
-Redirect 301 /Thankyou/ /thankyou/
-# Redirect 301 /blogs.cymetrixsoft.com/ https://www.cymetrixsoft.com/blogs/
-
-
-
-
-
 #
 # Apache/PHP/Drupal settings:
 #
 
 # Protect files and directories from prying eyes.
-
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-
-#   # Force HTTPS
-#   RewriteCond %{HTTPS} off
-#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-#   # Add trailing slash to URLs if not a file, folder, or excluded path
-#   RewriteCond %{REQUEST_URI} !\.
-#   RewriteCond %{REQUEST_URI} !/$
-#   RewriteCond %{REQUEST_URI} !^/webform($|/)
-#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
-# </IfModule>
-
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  # Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  # Add trailing slash to URLs if not a file or folder, and only if there are no query parameters
-  RewriteCond %{REQUEST_URI} !\.
-  RewriteCond %{REQUEST_URI} !/$
-  RewriteCond %{QUERY_STRING} ^$
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
-</IfModule>
-
-
-
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   # Add trailing slash to URLs if not a file or folder
-#   RewriteCond %{REQUEST_URI} !\.
-#   RewriteCond %{REQUEST_URI} !/$
-#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
-# </IfModule>
-
-
 <FilesMatch "\.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|web\.config|yarn\.lock|package\.json)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$">
   <IfModule mod_authz_core.c>
     Require all denied
@@ -254,6 +184,3 @@ AddEncoding gzip svgz
   # Disable Proxy header, since it's an attack vector.
   RequestHeader unset Proxy
 </IfModule>
-
-
-
