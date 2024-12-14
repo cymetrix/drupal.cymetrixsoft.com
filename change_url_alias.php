@@ -16,7 +16,7 @@ var_dump($host);
 // Set the database credentials based on the domain
 if ($host === 'www.cymetrixsoft.com') {
     // Database credentials for https://www.cymetrixsoft.com
-    $mysqli = new mysqli("localhost", "cymetrix_production_db", "8J8bp)vS6!", "cymetrix_drup223");
+    $mysqli = new mysqli("localhost", "cymetrix_drup223", "8J8bp)vS6!", "cymetrix_production_db");
 } elseif ($host === 'drupal.cymetrixsoft.com') {
     // Database credentials for https://drupal.cymetrixsoft.com
     $mysqli = new mysqli("localhost", "cymetrix_drup223", "8J8bp)vS6!", "cymetrix_drup223");
