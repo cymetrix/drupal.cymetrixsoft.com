@@ -90,6 +90,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDG4N2Z"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+{# Include recaptcha api js#}
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+
   </head>
   <body{{ attributes.addClass(body_classes) }}>
   {% set breakpoint = theme.settings.header_mobile_breakpoint > 4099 ? '99999' : theme.settings.header_mobile_breakpoint %}
