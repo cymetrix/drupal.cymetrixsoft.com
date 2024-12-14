@@ -22,28 +22,53 @@ Redirect 301 /Thankyou/ /thankyou/
 
 
 
+#
+# Apache/PHP/Drupal settings:
+#
+
+# Protect files and directories from prying eyes.
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Ensure HTTPS and WWW without adding extra "www"
-  RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\. [NC]  # If "www" is not present
-  RewriteCond %{HTTP_HOST} !^www\.www\. [NC]  # Avoid double "www"
-  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # Redirect double "www" to single "www"
-  RewriteCond %{HTTP_HOST} ^www\.www\. [NC]
-  RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Add trailing slash to URLs if not a file, folder, or excluded path
   RewriteCond %{REQUEST_URI} !\.
   RewriteCond %{REQUEST_URI} !/$
   RewriteCond %{REQUEST_URI} !^/webform($|/)
-  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1/ [L,R=301]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+</IfModule>
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Add trailing slash to URLs if not a file or folder, and only if there are no query parameters
+  RewriteCond %{REQUEST_URI} !\.
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{QUERY_STRING} ^$
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
 </IfModule>
 
 
 
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   # Add trailing slash to URLs if not a file or folder
+#   RewriteCond %{REQUEST_URI} !\.
+#   RewriteCond %{REQUEST_URI} !/$
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+# </IfModule>
 
 
 <FilesMatch "\.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|web\.config|yarn\.lock|package\.json)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$">
