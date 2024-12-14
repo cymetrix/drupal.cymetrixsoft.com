@@ -27,20 +27,25 @@ Redirect 301 /Thankyou/ /thankyou/
 #
 
 # Protect files and directories from prying eyes.
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Force HTTPS
+  # Ensure HTTPS and add www if necessary, but avoid infinite redirect loop
   RewriteCond %{HTTPS} off
-  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
+
+  # Ensure that if the domain is without www, we redirect it to www
+  RewriteCond %{HTTP_HOST} ^cymetrixsoft\.com$ [NC]
+  RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
 
   # Add trailing slash to URLs if not a file, folder, or excluded path
   RewriteCond %{REQUEST_URI} !\.
   RewriteCond %{REQUEST_URI} !/$
   RewriteCond %{REQUEST_URI} !^/webform($|/)
-  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1/ [L,R=301]
+  RewriteRule ^(.*)$ https://www.cymetrixsoft.com/$1/ [L,R=301]
 </IfModule>
+
 
 
 
