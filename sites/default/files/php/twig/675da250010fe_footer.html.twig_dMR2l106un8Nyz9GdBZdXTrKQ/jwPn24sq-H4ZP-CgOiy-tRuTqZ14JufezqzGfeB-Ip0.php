@@ -1,38 +1,83 @@
-{#<script src="https://cdn.jsdelivr.net/npm/stickybits"></script>#}
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<?php
 
-{#<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">#}
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" async></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* themes/contrib/dxpr_theme/templates/footer.html.twig */
+class __TwigTemplate_c6ad7206fa9a76bd68d7e59c0782b381 extends Template
+{
+    private $source;
+    private $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+        $this->sandbox = $this->env->getExtension(SandboxExtension::class);
+        $this->checkSecurity();
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 2
+        yield "<script src=\"https://code.jquery.com/jquery-3.7.1.min.js\" integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>
+
+";
+        // line 5
+        yield "<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" async></script>
+<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
 
 
-<div class="modal fade" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Contact Our Experts</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none;background: white;font-size: 30px;width: 30px;">
-          <span aria-hidden="true">&times;</span>
+<div class=\"modal fade\" id=\"contactUsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
+  <div class=\"modal-dialog\" role=\"document\">
+    <div class=\"modal-content\">
+      <div class=\"modal-header\">
+        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Contact Our Experts</h5>
+        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\" style=\"border: none;background: white;font-size: 30px;width: 30px;\">
+          <span aria-hidden=\"true\">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-            {{ drupal_entity('webform', 'contact')|merge({'#attributes': {'class': ['contactForm']}}) }}
+      <div class=\"modal-body\">
+            ";
+        // line 19
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, Twig\Extension\CoreExtension::merge(Drupal\twig_tweak\TwigTweakExtension::drupalEntity("webform", "contact"), ["#attributes" => ["class" => ["contactForm"]]]), "html", null, true);
+        yield "
         </div>
      
     </div>
   </div>
 </div>
-<div class="modal fade" id="jobApplicationModal" tabindex="-1" role="dialog" aria-labelledby="jobApplicationModal_title" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="jobApplicationModal_title">Job Application</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+<div class=\"modal fade\" id=\"jobApplicationModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"jobApplicationModal_title\" aria-hidden=\"true\">
+  <div class=\"modal-dialog modal-lg\" role=\"document\">
+    <div class=\"modal-content\">
+      <div class=\"modal-header\">
+        <h5 class=\"modal-title\" id=\"jobApplicationModal_title\">Job Application</h5>
+        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+          <span aria-hidden=\"true\">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-            {{ drupal_entity('webform', 'job_application_form')|merge({'#attributes': {'class': ['JobForm']}}) }}
+      <div class=\"modal-body\">
+            ";
+        // line 35
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, Twig\Extension\CoreExtension::merge(Drupal\twig_tweak\TwigTweakExtension::drupalEntity("webform", "job_application_form"), ["#attributes" => ["class" => ["JobForm"]]]), "html", null, true);
+        yield "
         </div>
      
     </div>
@@ -40,145 +85,186 @@
 </div>
 
 
-{#id="wave_container" #}
+";
+        // line 44
+        yield "
+";
+        // line 45
+        if (($context["footer_blue_latest"] ?? null)) {
+            // line 46
+            yield "
+";
+            // line 48
+            yield "
 
-{% if footer_blue_latest %}
-
-{#{{ dump(footer_blue_latest) }}#}
-
-
-    <div id="wave_container" style="position: relative;">
-        <div class="container primary_footer">
-            <div class="footer_slogan">
-                <div class="web_primary_footer">
-                    <p>{{ footer_blue_latest.title }}</p>
+    <div id=\"wave_container\" style=\"position: relative;\">
+        <div class=\"container primary_footer\">
+            <div class=\"footer_slogan\">
+                <div class=\"web_primary_footer\">
+                    <p>";
+            // line 54
+            yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["footer_blue_latest"] ?? null), "title", [], "any", false, false, true, 54), 54, $this->source), "html", null, true);
+            yield "</p>
                     <br>
                 </div>
             </div>
-            <div class="footer_contact SAS">
-                <a href="{{ footer_blue_latest.cta_link }}">{{ footer_blue_latest.cta_text }}</a>
+            <div class=\"footer_contact SAS\">
+                <a href=\"";
+            // line 59
+            yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["footer_blue_latest"] ?? null), "cta_link", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+            yield "\">";
+            yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["footer_blue_latest"] ?? null), "cta_text", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+            yield "</a>
             </div>
-            <div class="footer_slogan_secondry">
-                <p>{{ footer_blue_latest.background_big_text }}</p>
+            <div class=\"footer_slogan_secondry\">
+                <p>";
+            // line 62
+            yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["footer_blue_latest"] ?? null), "background_big_text", [], "any", false, false, true, 62), 62, $this->source), "html", null, true);
+            yield "</p>
             </div>
         </div>
     </div>
-{% else %}
-    <div id="wave_container" style="position: relative;">
-        <div class="container primary_footer">
-            <div class="footer_slogan">
-                <div class="web_primary_footer">
+";
+        } else {
+            // line 67
+            yield "    <div id=\"wave_container\" style=\"position: relative;\">
+        <div class=\"container primary_footer\">
+            <div class=\"footer_slogan\">
+                <div class=\"web_primary_footer\">
                     <p>
                         Transform your business
                     </p>
                     <br>
                 </div>
             </div>
-            <div class="footer_contact">
-                <a href="/contact-us/">Connect With Us</a>
+            <div class=\"footer_contact\">
+                <a href=\"/contact-us/\">Connect With Us</a>
             </div>
-            <div class="footer_slogan_secondry">
+            <div class=\"footer_slogan_secondry\">
                 <p>GROWTH</p>
                 <p>Technology</p>
             </div>
         </div>
     </div>
-{% endif %}
+";
+        }
+        // line 87
+        yield "
 
+\t
 
-	
+<footer class=\"bd-footer\">
 
-<footer class="bd-footer">
+\t<div class=\"container py-4 px-4 px-md-3 text-body-secondary ftr-black\">
+\t\t<div class=\"row\" id=\"block-cymetrix-quicklinks\">
+\t\t    
+\t\t\t<div class=\"col-lg-3 mb-3 logo_social\">
+\t\t\t\t<a class=\"d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none\" href=\"/\" aria-label=\"Bootstrap\">
 
-	<div class="container py-4 px-4 px-md-3 text-body-secondary ftr-black">
-		<div class="row" id="block-cymetrix-quicklinks">
-		    
-			<div class="col-lg-3 mb-3 logo_social">
-				<a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap">
-
-					<img src="{{ file_url('public://assets/white-logo.png') }}" alt="Logo">
-				</a>
-				<ul class="social_links" style="padding-left:0 !important">
-					<li class="footer social_links_list">
-						<a href="https://www.facebook.com/cymetrix/" target="_blank">
-    						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
-    							<circle cx="20" cy="20" r="19.5" fill="#161616" stroke="white"/>
-    							<path d="M24.8678 17.3336H21.749V15.5558C21.749 14.6385 21.8234 14.0607 23.1319 14.0607H24.7847V11.234C23.9804 11.1505 23.1717 11.1096 22.3622 11.1114C19.9618 11.1114 18.21 12.5843 18.21 15.2883V17.3336H15.5557V20.8891L18.21 20.8882V28.8891H21.749V20.8865L24.4617 20.8856L24.8678 17.3336Z" fill="white"/>
-    						</svg>    
-						</a>
-						
-					</li>
-					<li class="footer social_links_list">
-					    
-						<a href="https://in.linkedin.com/company/cymetrixsoft/" target="_blank">
-    						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
-    							<circle cx="20" cy="20" r="19.5" fill="#161616" stroke="white"/>
-    							<path d="M16.6158 26.6666H13.333V16.8181H16.6158V26.6666ZM14.9751 15.505C14.067 15.505 13.333 14.769 13.333 13.8629C13.333 12.9569 14.0684 12.2222 14.9751 12.2222C15.8798 12.2222 16.6158 12.9582 16.6158 13.8629C16.6158 14.769 15.8798 15.505 14.9751 15.505ZM28.434 26.6666H25.2779V21.8737C25.2779 20.7306 25.2562 19.2606 23.6372 19.2606C21.9938 19.2606 21.741 20.5054 21.741 21.791V26.6666H18.5855V16.8109H21.6149V18.1575H21.6576C22.0791 17.3828 23.1093 16.566 24.6456 16.566C27.8431 16.566 28.434 18.6073 28.434 21.2611V26.6666Z" fill="white"/>
-    						</svg>
-						</a>
-					</li>
-					<li class="footer social_links_list">
-					    <a href="https://twitter.com/cymetrix_soft/" target="_blank">
-    					    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
-    							<circle cx="20" cy="20" r="19.5" fill="#161616" stroke="white"/>
-    							<path d="M13.5756 13.3335L18.564 20.606L13.333 26.6668H14.448L19.0581 21.3255L22.7217 26.6668H26.2353L21.0153 19.0572L25.9557 13.3335H24.8414L20.5219 18.3376L17.0892 13.3335H13.5756Z" fill="white"/>
-    						</svg>    
-					    </a>
-						
-					</li>
-				<!--	<li class="social_links_list">
-						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 40 40" fill="none">
-							<circle cx="20" cy="20" r="19.5" stroke="white"/>
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M27.666 23.2494C27.666 25.6853 25.6843 27.667 23.2484 27.667H16.0836C13.6477 27.667 11.666 25.6853 11.666 23.2494V16.0846C11.666 13.6487 13.6477 11.667 16.0836 11.667H23.2484C25.6843 11.667 27.666 13.6487 27.666 16.0846V23.2494ZM19.666 16.9597C18.1732 16.9597 16.9587 18.1742 16.9587 19.667C16.9587 21.1598 18.1732 22.3743 19.666 22.3743C21.1588 22.3743 22.3733 21.1598 22.3733 19.667C22.3733 18.1742 21.1588 16.9597 19.666 16.9597ZM19.666 23.8733C17.3466 23.8733 15.4597 21.9864 15.4597 19.667C15.4597 17.3476 17.3466 15.4607 19.666 15.4607C21.9854 15.4607 23.8723 17.3476 23.8723 19.667C23.8723 21.9864 21.9854 23.8733 19.666 23.8733ZM15.6462 14.4678C15.6462 15.0776 15.1519 15.5719 14.5422 15.5719C13.9324 15.5719 13.4381 15.0776 13.4381 14.4678C13.4381 13.858 13.9324 13.3637 14.5422 13.3637C15.1519 13.3637 15.6462 13.858 15.6462 14.4678ZM14.9757 14.4628C14.9757 14.705 14.7794 14.9014 14.5372 14.9014C14.2949 14.9014 14.0986 14.705 14.0986 14.4628C14.0986 14.2205 14.2949 14.0242 14.5372 14.0242C14.7794 14.0242 14.9757 14.2205 14.9757 14.4628Z" fill="white"/>
-						</svg>
-					</li>-->
-				</ul>
-			</div>
-            <div class="col-lg-9">
-                <div class="row">
+\t\t\t\t\t<img src=\"";
+        // line 99
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->extensions['Drupal\Core\Template\TwigExtension']->getFileUrl("public://assets/white-logo.png"), "html", null, true);
+        yield "\" alt=\"Logo\">
+\t\t\t\t</a>
+\t\t\t\t<ul class=\"social_links\" style=\"padding-left:0 !important\">
+\t\t\t\t\t<li class=\"footer social_links_list\">
+\t\t\t\t\t\t<a href=\"https://www.facebook.com/cymetrix/\" target=\"_blank\">
+    \t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">
+    \t\t\t\t\t\t\t<circle cx=\"20\" cy=\"20\" r=\"19.5\" fill=\"#161616\" stroke=\"white\"/>
+    \t\t\t\t\t\t\t<path d=\"M24.8678 17.3336H21.749V15.5558C21.749 14.6385 21.8234 14.0607 23.1319 14.0607H24.7847V11.234C23.9804 11.1505 23.1717 11.1096 22.3622 11.1114C19.9618 11.1114 18.21 12.5843 18.21 15.2883V17.3336H15.5557V20.8891L18.21 20.8882V28.8891H21.749V20.8865L24.4617 20.8856L24.8678 17.3336Z\" fill=\"white\"/>
+    \t\t\t\t\t\t</svg>    
+\t\t\t\t\t\t</a>
+\t\t\t\t\t\t
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"footer social_links_list\">
+\t\t\t\t\t    
+\t\t\t\t\t\t<a href=\"https://in.linkedin.com/company/cymetrixsoft/\" target=\"_blank\">
+    \t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">
+    \t\t\t\t\t\t\t<circle cx=\"20\" cy=\"20\" r=\"19.5\" fill=\"#161616\" stroke=\"white\"/>
+    \t\t\t\t\t\t\t<path d=\"M16.6158 26.6666H13.333V16.8181H16.6158V26.6666ZM14.9751 15.505C14.067 15.505 13.333 14.769 13.333 13.8629C13.333 12.9569 14.0684 12.2222 14.9751 12.2222C15.8798 12.2222 16.6158 12.9582 16.6158 13.8629C16.6158 14.769 15.8798 15.505 14.9751 15.505ZM28.434 26.6666H25.2779V21.8737C25.2779 20.7306 25.2562 19.2606 23.6372 19.2606C21.9938 19.2606 21.741 20.5054 21.741 21.791V26.6666H18.5855V16.8109H21.6149V18.1575H21.6576C22.0791 17.3828 23.1093 16.566 24.6456 16.566C27.8431 16.566 28.434 18.6073 28.434 21.2611V26.6666Z\" fill=\"white\"/>
+    \t\t\t\t\t\t</svg>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"footer social_links_list\">
+\t\t\t\t\t    <a href=\"https://twitter.com/cymetrix_soft/\" target=\"_blank\">
+    \t\t\t\t\t    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">
+    \t\t\t\t\t\t\t<circle cx=\"20\" cy=\"20\" r=\"19.5\" fill=\"#161616\" stroke=\"white\"/>
+    \t\t\t\t\t\t\t<path d=\"M13.5756 13.3335L18.564 20.606L13.333 26.6668H14.448L19.0581 21.3255L22.7217 26.6668H26.2353L21.0153 19.0572L25.9557 13.3335H24.8414L20.5219 18.3376L17.0892 13.3335H13.5756Z\" fill=\"white\"/>
+    \t\t\t\t\t\t</svg>    
+\t\t\t\t\t    </a>
+\t\t\t\t\t\t
+\t\t\t\t\t</li>
+\t\t\t\t<!--\t<li class=\"social_links_list\">
+\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">
+\t\t\t\t\t\t\t<circle cx=\"20\" cy=\"20\" r=\"19.5\" stroke=\"white\"/>
+\t\t\t\t\t\t\t<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M27.666 23.2494C27.666 25.6853 25.6843 27.667 23.2484 27.667H16.0836C13.6477 27.667 11.666 25.6853 11.666 23.2494V16.0846C11.666 13.6487 13.6477 11.667 16.0836 11.667H23.2484C25.6843 11.667 27.666 13.6487 27.666 16.0846V23.2494ZM19.666 16.9597C18.1732 16.9597 16.9587 18.1742 16.9587 19.667C16.9587 21.1598 18.1732 22.3743 19.666 22.3743C21.1588 22.3743 22.3733 21.1598 22.3733 19.667C22.3733 18.1742 21.1588 16.9597 19.666 16.9597ZM19.666 23.8733C17.3466 23.8733 15.4597 21.9864 15.4597 19.667C15.4597 17.3476 17.3466 15.4607 19.666 15.4607C21.9854 15.4607 23.8723 17.3476 23.8723 19.667C23.8723 21.9864 21.9854 23.8733 19.666 23.8733ZM15.6462 14.4678C15.6462 15.0776 15.1519 15.5719 14.5422 15.5719C13.9324 15.5719 13.4381 15.0776 13.4381 14.4678C13.4381 13.858 13.9324 13.3637 14.5422 13.3637C15.1519 13.3637 15.6462 13.858 15.6462 14.4678ZM14.9757 14.4628C14.9757 14.705 14.7794 14.9014 14.5372 14.9014C14.2949 14.9014 14.0986 14.705 14.0986 14.4628C14.0986 14.2205 14.2949 14.0242 14.5372 14.0242C14.7794 14.0242 14.9757 14.2205 14.9757 14.4628Z\" fill=\"white\"/>
+\t\t\t\t\t\t</svg>
+\t\t\t\t\t</li>-->
+\t\t\t\t</ul>
+\t\t\t</div>
+            <div class=\"col-lg-9\">
+                <div class=\"row\">
                     
-			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu" id="">
-				{{ page.footer_first_column }}
-			</div>
-			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu">
-				{{ page.footer_second_column }}
-			</div>
-			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu">
-				{{ page.footer_third_column }}
-			</div>
-			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu">
-				{{ page.footer_forth_column }}
-			</div>
+\t\t\t<div class=\"col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu\" id=\"\">
+\t\t\t\t";
+        // line 141
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer_first_column", [], "any", false, false, true, 141), 141, $this->source), "html", null, true);
+        yield "
+\t\t\t</div>
+\t\t\t<div class=\"col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu\">
+\t\t\t\t";
+        // line 144
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer_second_column", [], "any", false, false, true, 144), 144, $this->source), "html", null, true);
+        yield "
+\t\t\t</div>
+\t\t\t<div class=\"col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu\">
+\t\t\t\t";
+        // line 147
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer_third_column", [], "any", false, false, true, 147), 147, $this->source), "html", null, true);
+        yield "
+\t\t\t</div>
+\t\t\t<div class=\"col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 footer_column_menu\">
+\t\t\t\t";
+        // line 150
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer_forth_column", [], "any", false, false, true, 150), 150, $this->source), "html", null, true);
+        yield "
+\t\t\t</div>
                 </div>
             </div>
 
-		</div>
-		<hr class="white_hr"/>
+\t\t</div>
+\t\t<hr class=\"white_hr\"/>
 
 
 
 
-		<div class="bottom_footer">
-			<ul class="ulone">
-				<li>
-					<a href="{{ url('<front>') }}privacypolicy/">Privacy Policy</a>
-				</li>
-				<li style="margin: 0 3%;">
-					<a href="{{ url('<front>') }}terms-of-use/">Terms of use</a>
-				</li>
-			</ul>
-			<ul class="ultwo">
-				2024 © Cymetrix Software
-			</ul>
-		</div>
+\t\t<div class=\"bottom_footer\">
+\t\t\t<ul class=\"ulone\">
+\t\t\t\t<li>
+\t\t\t\t\t<a href=\"";
+        // line 164
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar($this->extensions['Drupal\Core\Template\TwigExtension']->getUrl("<front>"));
+        yield "privacypolicy/\">Privacy Policy</a>
+\t\t\t\t</li>
+\t\t\t\t<li style=\"margin: 0 3%;\">
+\t\t\t\t\t<a href=\"";
+        // line 167
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar($this->extensions['Drupal\Core\Template\TwigExtension']->getUrl("<front>"));
+        yield "terms-of-use/\">Terms of use</a>
+\t\t\t\t</li>
+\t\t\t</ul>
+\t\t\t<ul class=\"ultwo\">
+\t\t\t\t2024 © Cymetrix Software
+\t\t\t</ul>
+\t\t</div>
 
 
-	</div>
+\t</div>
 </footer>
 
 <!--chat
-<chat-bot platform_id="b67f0808-1677-425f-a554-7f180c0ee367" user_id="68c5a036-43f6-4772-bec8-f37113315b04" chatbot_id="7bfd8655-8da8-4422-aa7b-1d59b1e05eab"><a href="https://www.chatsimple.ai/?utm_source=widget&utm_medium=referral">chatsimple</a></chat-bot>
-<script src="https://cdn.chatsimple.ai/chat-bot-loader.js" async defer></script>-->
+<chat-bot platform_id=\"b67f0808-1677-425f-a554-7f180c0ee367\" user_id=\"68c5a036-43f6-4772-bec8-f37113315b04\" chatbot_id=\"7bfd8655-8da8-4422-aa7b-1d59b1e05eab\"><a href=\"https://www.chatsimple.ai/?utm_source=widget&utm_medium=referral\">chatsimple</a></chat-bot>
+<script src=\"https://cdn.chatsimple.ai/chat-bot-loader.js\" async defer></script>-->
 
 
 <style>
@@ -188,7 +274,7 @@
 }
 
 
-/*.testimonial_by::after{content:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTUiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA1NSA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMyLjg3NzEgMEw0My42MTMyIDI1LjczMkgzMi4wNjM4VjQ4SDU1VjI1LjczMkw0My4xMjUyIDBIMzIuODc3MVpNMC44MzE1MjQgMEwxMS41Njc2IDI1LjczMkgwLjAxODE4MDhWNDhIMjIuOTU0NFYyNS43MzJMMTEuMDc5NiAwSDAuODMxNTI0WiIgZmlsbD0iIzFCN0VDMSIvPgo8L3N2Zz4K");position:absolute;top:-37%;right:20%}*/
+/*.testimonial_by::after{content:url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTUiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA1NSA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMyLjg3NzEgMEw0My42MTMyIDI1LjczMkgzMi4wNjM4VjQ4SDU1VjI1LjczMkw0My4xMjUyIDBIMzIuODc3MVpNMC44MzE1MjQgMEwxMS41Njc2IDI1LjczMkgwLjAxODE4MDhWNDhIMjIuOTU0NFYyNS43MzJMMTEuMDc5NiAwSDAuODMxNTI0WiIgZmlsbD0iIzFCN0VDMSIvPgo8L3N2Zz4K\");position:absolute;top:-37%;right:20%}*/
 
 .testimonial_by::after {
     content: ''; /* Empty content required for pseudo-element */
@@ -907,13 +993,13 @@ b,strong{
 
 <script>
     
-    document.addEventListener("DOMContentLoaded", function () {
-    const caseStudyElement = document.getElementById("caseStudy");
+    document.addEventListener(\"DOMContentLoaded\", function () {
+    const caseStudyElement = document.getElementById(\"caseStudy\");
 
     if (caseStudyElement) {
-        if (caseStudyElement.classList.contains("caseSlider")) {
+        if (caseStudyElement.classList.contains(\"caseSlider\")) {
             handleSliderLayout(caseStudyElement);
-        } else if (caseStudyElement.classList.contains("caseGrid")) {
+        } else if (caseStudyElement.classList.contains(\"caseGrid\")) {
             handleGridLayout(caseStudyElement);
 
         }
@@ -921,23 +1007,23 @@ b,strong{
 });
 
 function handleSliderLayout(caseStudyElement) {
-    const columnClass = Array.from(caseStudyElement.classList).find(cls => cls.endsWith("column"));
+    const columnClass = Array.from(caseStudyElement.classList).find(cls => cls.endsWith(\"column\"));
     if (columnClass) {
-        const columnCount = parseInt(columnClass.replace("column", ""), 10);
-        caseStudyElement.style.setProperty("--column-count", columnCount);
-        const viewContent = caseStudyElement.querySelector(".view-content");
-        const viewsRows = Array.from(viewContent.querySelectorAll(".views-row"));
+        const columnCount = parseInt(columnClass.replace(\"column\", \"\"), 10);
+        caseStudyElement.style.setProperty(\"--column-count\", columnCount);
+        const viewContent = caseStudyElement.querySelector(\".view-content\");
+        const viewsRows = Array.from(viewContent.querySelectorAll(\".views-row\"));
         const viewWidth = caseStudyElement.offsetWidth;
         const rowWidth = viewWidth / columnCount; 
         
         viewsRows.forEach(row => {
-            row.style.minWidth = `${rowWidth}px`;
+            row.style.minWidth = `\${rowWidth}px`;
         });
         viewContent.style.display = 'grid';
         viewContent.style.gridAutoFlow = 'column';
-        viewContent.style.gridTemplateColumns = `repeat(${viewsRows.length}, ${rowWidth}px)`;
+        viewContent.style.gridTemplateColumns = `repeat(\${viewsRows.length}, \${rowWidth}px)`;
         viewContent.style.overflowX = 'hidden';
-        viewContent.style.width = `${viewsRows.length * rowWidth}px`;
+        viewContent.style.width = `\${viewsRows.length * rowWidth}px`;
         viewContent.style.transition = 'transform 0.5s ease'; // Smooth transition for sliding
 
         // Create navigation arrows
@@ -950,39 +1036,39 @@ function handleSliderLayout(caseStudyElement) {
 
 function handleGridLayout(caseStudyElement) {
     // Get the nrow and ncolumn classes
-    const rowClass = Array.from(caseStudyElement.classList).find(cls => cls.endsWith("row"));
-    const columnClass = Array.from(caseStudyElement.classList).find(cls => cls.endsWith("column"));
+    const rowClass = Array.from(caseStudyElement.classList).find(cls => cls.endsWith(\"row\"));
+    const columnClass = Array.from(caseStudyElement.classList).find(cls => cls.endsWith(\"column\"));
 
     let rowCount = 2; // Default values
     let columnCount = 3; // Default values
 
     if (rowClass) {
-        rowCount = parseInt(rowClass.replace("row", ""), 10);
+        rowCount = parseInt(rowClass.replace(\"row\", \"\"), 10);
     }
 
     if (columnClass) {
-        columnCount = parseInt(columnClass.replace("column", ""), 10);
+        columnCount = parseInt(columnClass.replace(\"column\", \"\"), 10);
     }
 
     // Apply the --row-count and --column-count CSS variables dynamically
-    caseStudyElement.style.setProperty("--row-count", rowCount);
-    caseStudyElement.style.setProperty("--column-count", columnCount);
+    caseStudyElement.style.setProperty(\"--row-count\", rowCount);
+    caseStudyElement.style.setProperty(\"--column-count\", columnCount);
 
-    const viewContent = caseStudyElement.querySelector(".view-content");
-    const viewsRows = viewContent.querySelectorAll(".views-row");
+    const viewContent = caseStudyElement.querySelector(\".view-content\");
+    const viewsRows = viewContent.querySelectorAll(\".views-row\");
     const viewWidth = caseStudyElement.offsetWidth;
     const rowHeight = viewWidth / rowCount; // Assuming square items, adjust if necessary
 
     // Set the width and height of each item
     viewsRows.forEach(row => {
-        row.style.minWidth = `${viewWidth / columnCount}px`;
-        row.style.minHeight = `${rowHeight}px`;
+        row.style.minWidth = `\${viewWidth / columnCount}px`;
+        row.style.minHeight = `\${rowHeight}px`;
     });
 
     // Configure grid layout
     viewContent.style.display = 'grid';
-    viewContent.style.gridTemplateRows = `repeat(${rowCount}, 420px)`;
-    viewContent.style.gridTemplateColumns = `repeat(${columnCount}, 1fr)`;
+    viewContent.style.gridTemplateRows = `repeat(\${rowCount}, 420px)`;
+    viewContent.style.gridTemplateColumns = `repeat(\${columnCount}, 1fr)`;
     viewContent.style.gap = '10px'; // Adjust gap as needed
 }
 
@@ -1032,14 +1118,14 @@ function createSliderNavArrows(caseStudyElement, viewContent, itemCount, columnC
     prevArrow.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            viewContent.style.transform = `translateX(-${rowWidth * currentIndex}px)`;
+            viewContent.style.transform = `translateX(-\${rowWidth * currentIndex}px)`;
         }
     });
 
     nextArrow.addEventListener('click', () => {
         if (currentIndex < maxIndex) {
             currentIndex++;
-            viewContent.style.transform = `translateX(-${rowWidth * currentIndex}px)`;
+            viewContent.style.transform = `translateX(-\${rowWidth * currentIndex}px)`;
         }
     });
 }
@@ -1058,19 +1144,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
  
-$(document).ready(function(){
+\$(document).ready(function(){
     
         
-    // $(".homepage_banner_heading").append('<h1 style="margin-left:auto;text-align:center;"><span class="fade-in active">CYMETRIX</span></h1>');
+    // \$(\".homepage_banner_heading\").append('<h1 style=\"margin-left:auto;text-align:center;\"><span class=\"fade-in active\">CYMETRIX</span></h1>');
 
-        $(".homepage_banner_heading").removeClass("nodisplay");
+        \$(\".homepage_banner_heading\").removeClass(\"nodisplay\");
 
     
     let bannerleft = `
-    <div class="banner_explore">
-<div style="display: -webkit-inline-box;">
-<p class="vertical-line"></p>
-    <p> &nbsp;&nbsp;<a href="#our-services-section" style="color: #000000;">Explore More</a></p>
+    <div class=\"banner_explore\">
+<div style=\"display: -webkit-inline-box;\">
+<p class=\"vertical-line\"></p>
+    <p> &nbsp;&nbsp;<a href=\"#our-services-section\" style=\"color: #000000;\">Explore More</a></p>
 
 </div>
     
@@ -1078,19 +1164,22 @@ $(document).ready(function(){
     `;
     
     let bannerright = `
-    <div class="banner_contact" style="position: absolute;
+    <div class=\"banner_contact\" style=\"position: absolute;
     right: -1%;
     transform: rotate(-90deg);     position: fixed;
-    z-index: 1000;    top: 45%;">
-        <div style="display: -webkit-inline-box;background: #dfebf3;color: white;padding: 10px;border-radius: 15px;">
-            <a href="#" data-toggle="modal" style="padding: 0;color:#616161;font-size: 14px;" data-target="#contactUsModal">Contact Us
-            <img src="{{ url('<front>') }}sites/default/files/2024-02/Group%207.png" alt="contact icon" style="height: 22px;" />
+    z-index: 1000;    top: 45%;\">
+        <div style=\"display: -webkit-inline-box;background: #dfebf3;color: white;padding: 10px;border-radius: 15px;\">
+            <a href=\"#\" data-toggle=\"modal\" style=\"padding: 0;color:#616161;font-size: 14px;\" data-target=\"#contactUsModal\">Contact Us
+            <img src=\"";
+        // line 1087
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar($this->extensions['Drupal\Core\Template\TwigExtension']->getUrl("<front>"));
+        yield "sites/default/files/2024-02/Group%207.png\" alt=\"contact icon\" style=\"height: 22px;\" />
             </a>
         </div>
 </div>
     `;
-$("#home_banner").append(bannerleft);
-$('body').append(bannerright);
+\$(\"#home_banner\").append(bannerleft);
+\$('body').append(bannerright);
 });
 
 
@@ -1122,7 +1211,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener(\"DOMContentLoaded\", function() {
     // Select all h2 elements
     const headers = document.querySelectorAll('h2');
     
@@ -1148,43 +1237,43 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-(function ($) {
-  $(document).ready(function () {
+(function (\$) {
+  \$(document).ready(function () {
 
-    $('.iconmenuFound').each(function () {
+    \$('.iconmenuFound').each(function () {
       
-      var imageUrl = $(this).attr('id');
+      var imageUrl = \$(this).attr('id');
       
-      var img = $('<img>').attr('src', imageUrl);
+      var img = \$('<img>').attr('src', imageUrl);
       
-      $(this).prepend(img);
+      \$(this).prepend(img);
     });
   });
 })(jQuery);
 
 
-$(document).ready(function() {
+\$(document).ready(function() {
 
- $('.navbar-nav.justify-content-end.flex-wrap.megamenu.nav-level-0 > li').each(function() {
-        if ($(this).find('span.nav-link.active').length > 0) {
-            $(this).addClass('active');
+ \$('.navbar-nav.justify-content-end.flex-wrap.megamenu.nav-level-0 > li').each(function() {
+        if (\$(this).find('span.nav-link.active').length > 0) {
+            \$(this).addClass('active');
         }
     });
 
-   const firstMenuItem = $('.menu-item.dropdown.mega-menu .dropdown-menu.nav-level-1 .menu-item').first();
+   const firstMenuItem = \$('.menu-item.dropdown.mega-menu .dropdown-menu.nav-level-1 .menu-item').first();
    firstMenuItem.addClass('active');
 
-            const $dropdownMenu = $('.dropdown-menu.nav-level-1');
-            if ($dropdownMenu.length) {
+            const \$dropdownMenu = \$('.dropdown-menu.nav-level-1');
+            if (\$dropdownMenu.length) {
 
 
-                $dropdownMenu.hover(
+                \$dropdownMenu.hover(
                     function() {
-                        // $(this).css('display', 'block');
+                        // \$(this).css('display', 'block');
                     },
                     function() {
-                        $(this).removeClass('show');
-                        // $(this).css('display', 'none');
+                        \$(this).removeClass('show');
+                        // \$(this).css('display', 'none');
                     }
                 );
 
@@ -1192,7 +1281,7 @@ $(document).ready(function() {
             } else {
 
             }
-            let megaMenuFooter = `<div class="nav-bottom-content" style="
+            let megaMenuFooter = `<div class=\"nav-bottom-content\" style=\"
                 position: absolute;
                 bottom: 0;
                 width: 100%;
@@ -1201,47 +1290,47 @@ $(document).ready(function() {
                 font-size: 16px;
                 padding: 10px 0;
                 background-color: #f5f5f5;
-            ">
-                <p>Ready to Amplify Your Salesforce Possibilities? Explore our <a href="https://www.damcogroup.com/salesforce/industry-solutions/">Salesforce Industry Expertise</a></p>
+            \">
+                <p>Ready to Amplify Your Salesforce Possibilities? Explore our <a href=\"https://www.damcogroup.com/salesforce/industry-solutions/\">Salesforce Industry Expertise</a></p>
             </div>`;
 
-            $('.menu-item.dropdown.mega-menu .dropdown-menu.nav-level-1').append(megaMenuFooter);
+            \$('.menu-item.dropdown.mega-menu .dropdown-menu.nav-level-1').append(megaMenuFooter);
         
         
         });
         
         
 
-$(document).ready(function() {
+\$(document).ready(function() {
 
-    $(document).on('click', '.menu-item.dropdown.mega-menu .dropdown-item', function(event) {
+    \$(document).on('click', '.menu-item.dropdown.mega-menu .dropdown-item', function(event) {
         event.stopPropagation();
-        if ($(window).width() <= 991) {
-            var $dropdownMenu = $(this).next('.dropdown-menu.nav-level-2.show');
-            $('.dropdown-menu.nav-level-2.show').not($dropdownMenu).slideUp();
-            $dropdownMenu.slideToggle();
+        if (\$(window).width() <= 991) {
+            var \$dropdownMenu = \$(this).next('.dropdown-menu.nav-level-2.show');
+            \$('.dropdown-menu.nav-level-2.show').not(\$dropdownMenu).slideUp();
+            \$dropdownMenu.slideToggle();
         }
     });
 
 
-    $(document).click(function() {
-        if ($(window).width() <= 991) {
-            $('.dropdown-menu.nav-level-2.show').slideUp();
+    \$(document).click(function() {
+        if (\$(window).width() <= 991) {
+            \$('.dropdown-menu.nav-level-2.show').slideUp();
         }
     });
 });
 
-$(document).ready(function() {
+\$(document).ready(function() {
 
-$('#navbarNav ul.dropdown-menu.nav-level-1 > li.menu-item.dropdown.mega-menu').addClass('navigation-level-2 mega-menu cymetrix_button_icon white');
-$('#navbarNav ul.dropdown-menu.nav-level-1 > li.menu-item.dropdown.mega-menu.navigation-level-2.cymetrix_button_icon.white').first().addClass('active');
+\$('#navbarNav ul.dropdown-menu.nav-level-1 > li.menu-item.dropdown.mega-menu').addClass('navigation-level-2 mega-menu cymetrix_button_icon white');
+\$('#navbarNav ul.dropdown-menu.nav-level-1 > li.menu-item.dropdown.mega-menu.navigation-level-2.cymetrix_button_icon.white').first().addClass('active');
 
 
-$(".navigation-level-2").on('mouseenter', function() {
-        $(".navigation-level-2").removeClass('active');
-        $(this).addClass('active');
+\$(\".navigation-level-2\").on('mouseenter', function() {
+        \$(\".navigation-level-2\").removeClass('active');
+        \$(this).addClass('active');
 
-        var totalChildren = $(this).find('.dropdown-menu.nav-level-2.show > li').length;
+        var totalChildren = \$(this).find('.dropdown-menu.nav-level-2.show > li').length;
         
         
         
@@ -1250,20 +1339,20 @@ $(".navigation-level-2").on('mouseenter', function() {
         
         html = `
         
-        <li class="specialContactSection" style="padding: 10px 5px;flex: 0 0 calc(80% - 10px);">
-            <span class="dropdown-item" aria-expanded="false" style="padding:inherit !important; opacity: 0;">Practices</span>
-        <div class="extra-nav-link-wrapper" style="padding-top: 8px;">
+        <li class=\"specialContactSection\" style=\"padding: 10px 5px;flex: 0 0 calc(80% - 10px);\">
+            <span class=\"dropdown-item\" aria-expanded=\"false\" style=\"padding:inherit !important; opacity: 0;\">Practices</span>
+        <div class=\"extra-nav-link-wrapper\" style=\"padding-top: 8px;\">
 
-                                            <div class="extra-link nav-call">
-                                              <a href="tel:+918655343081" style="border: 3px solid #eeee;">
-                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <div class=\"extra-link nav-call\">
+                                              <a href=\"tel:+918655343081\" style=\"border: 3px solid #eeee;\">
+                                                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>
                                                 <span>+918655343081</span>
                                               </a>
                                             </div>
 
-                                            <div class="extra-link nav-mail">
-                                              <a href="mailto:info@cymetrixsoft.com" style="border: 3px solid #eeee;">
-                                                <i class="fa fa-envelope-o" aria-hidden="true" style="color:red;"></i>
+                                            <div class=\"extra-link nav-mail\">
+                                              <a href=\"mailto:info@cymetrixsoft.com\" style=\"border: 3px solid #eeee;\">
+                                                <i class=\"fa fa-envelope-o\" aria-hidden=\"true\" style=\"color:red;\"></i>
                                                 <span>info@cymetrixsoft.com</span>
                                               </a>
                                             </div>
@@ -1276,7 +1365,7 @@ $(".navigation-level-2").on('mouseenter', function() {
         ` ; 
         
         
-        $(this).find('> ul.dropdown-menu.show').append(html)
+        \$(this).find('> ul.dropdown-menu.show').append(html)
         
         
     }
@@ -1284,41 +1373,41 @@ $(".navigation-level-2").on('mouseenter', function() {
     
     var childWidth = 120 * totalChildren; // Calculate width for each child li
 
-        $(this).find('.dropdown-menu.nav-level-2.show').css('width', childWidth + "%");
+        \$(this).find('.dropdown-menu.nav-level-2.show').css('width', childWidth + \"%\");
 
       
-        var index = $(this).index() + 1; // Adding 1 to convert from zero-based index to 1-based index
-        var topPosition = -(index - 1) * 100 + "%"; 
+        var index = \$(this).index() + 1; // Adding 1 to convert from zero-based index to 1-based index
+        var topPosition = -(index - 1) * 100 + \"%\"; 
 
-        $(this).find('.dropdown-menu.nav-level-2.show').css({
+        \$(this).find('.dropdown-menu.nav-level-2.show').css({
             'top': topPosition,
             'z-index': '99999999999'
         });
 
         // Set properties for not active elements
-        $(".navigation-level-2:not(.active) .dropdown-menu.nav-level-2.show").css({
+        \$(\".navigation-level-2:not(.active) .dropdown-menu.nav-level-2.show\").css({
             'top': '1000%',
             'z-index': '0'
         });
     });
     
-$(".navigation-level-2.active").on('mouseenter', function() {
-    var columnCount = $(this).find('> ul.dropdown-menu.show > li').length;
+\$(\".navigation-level-2.active\").on('mouseenter', function() {
+    var columnCount = \$(this).find('> ul.dropdown-menu.show > li').length;
     
     if(columnCount==1){
         
         
         html = `
         
-        <div class="specialContactSection">
-        <div class="row">
-        <div class="col-sm-12">
+        <div class=\"specialContactSection\">
+        <div class=\"row\">
+        <div class=\"col-sm-12\">
             teleplhone
         </div>
         </div>
         
-        <div class="row">
-        <div class="col-sm-12">
+        <div class=\"row\">
+        <div class=\"col-sm-12\">
             email
         </div>
         </div>
@@ -1330,7 +1419,7 @@ $(".navigation-level-2.active").on('mouseenter', function() {
         ` ; 
         
         
-        $(this).find('> ul.dropdown-menu.show').append(html)
+        \$(this).find('> ul.dropdown-menu.show').append(html)
         
         
     }
@@ -1340,17 +1429,17 @@ $(".navigation-level-2.active").on('mouseenter', function() {
     element.addClass('show');
     element.next('ul.dropdown-menu.nav-level-1').addClass('show');
   }
-  $('.nav-link.dropdown-toggle').hover(function() {
-    toggleShowClass($(this));
+  \$('.nav-link.dropdown-toggle').hover(function() {
+    toggleShowClass(\$(this));
   }, function() {
-    var $this = $(this);
-    if (!$this.next('.dropdown-menu.nav-level-1').is(':hover')) {
-      $this.removeClass('show');
-      $this.next('ul.dropdown-menu.nav-level-1').removeClass('show');
+    var \$this = \$(this);
+    if (!\$this.next('.dropdown-menu.nav-level-1').is(':hover')) {
+      \$this.removeClass('show');
+      \$this.next('ul.dropdown-menu.nav-level-1').removeClass('show');
     }
   });
-  $('.dropdown-menu.nav-level-1').hover(function() {
-    toggleShowClass($(this).prev('.nav-link.dropdown-toggle'));
+  \$('.dropdown-menu.nav-level-1').hover(function() {
+    toggleShowClass(\$(this).prev('.nav-link.dropdown-toggle'));
   }, function() {
   });
 });
@@ -1361,15 +1450,15 @@ $(".navigation-level-2.active").on('mouseenter', function() {
 
 
 
-$(document).ready(function(){
+\$(document).ready(function(){
     
 
     
-    $(".video_thumbnails2 .az-image").on('click',function(){
-        var a = $(this).attr('id')
+    \$(\".video_thumbnails2 .az-image\").on('click',function(){
+        var a = \$(this).attr('id')
         
         
-        $(".youtube_embed_video .ratio").html(a)
+        \$(\".youtube_embed_video .ratio\").html(a)
         
     })
     
@@ -1403,7 +1492,7 @@ videos.forEach(function(video) {
 
 
 // Wait for the DOM content to be loaded
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener(\"DOMContentLoaded\", function() {
     // Select all menu items with dropdowns
     var menuItems = document.querySelectorAll('.menu-item.dropdown');
 
@@ -1474,45 +1563,45 @@ collapsibleItems.forEach(item => {
 
 
 
-const dropdownMenus = document.querySelectorAll('.dropdown-menu[class*="nav-level-"]');
+const dropdownMenus = document.querySelectorAll('.dropdown-menu[class*=\"nav-level-\"]');
 dropdownMenus.forEach(menu => {
     if (!menu.classList.contains('nav-level-1')) {
         menu.classList.add('show');
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var pElements = document.querySelectorAll("p");
+document.addEventListener(\"DOMContentLoaded\", function() {
+    var pElements = document.querySelectorAll(\"p\");
     pElements.forEach(function(element) {
-        if (element.innerHTML === "&nbsp;") {
+        if (element.innerHTML === \"&nbsp;\") {
             element.remove();
         }
     });
 });
 
 
-$(document).ready(function(){
-    $(".dropdown-menu.show.nav-level-1").removeClass("show");
+\$(document).ready(function(){
+    \$(\".dropdown-menu.show.nav-level-1\").removeClass(\"show\");
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var dropdownMenus = document.querySelectorAll("ul.dropdown-menu:not(.nav-level-0)");
+document.addEventListener(\"DOMContentLoaded\", function() {
+    var dropdownMenus = document.querySelectorAll(\"ul.dropdown-menu:not(.nav-level-0)\");
     dropdownMenus.forEach(function(menu) {
-        var menuItems = menu.querySelectorAll("li > a");
+        var menuItems = menu.querySelectorAll(\"li > a\");
         menuItems.forEach(function(item) {
-            item.removeAttribute("data-bs-toggle");
+            item.removeAttribute(\"data-bs-toggle\");
         });
     });
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener(\"DOMContentLoaded\", function() {
     var form = document.querySelector('.contactForm');
-    var inputs = form.querySelectorAll('input[type="text"],input[type="email"], textarea');
+    var inputs = form.querySelectorAll('input[type=\"text\"],input[type=\"email\"], textarea');
     inputs.forEach(function(input) {
         input.classList.add('form-control');
     });
-    var submitButtons = form.querySelectorAll('input[type="submit"], button[type="submit"]');
+    var submitButtons = form.querySelectorAll('input[type=\"submit\"], button[type=\"submit\"]');
     
     // Loop through each submit button and add the 'cymetrix_conatct_button' class
     submitButtons.forEach(function(button) {
@@ -1524,11 +1613,11 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
     var form2 = document.querySelector('.JobForm');
-    var inputs = form2.querySelectorAll('input[type="text"],input[type="email"], textarea,input[type="tel"],input[type="file"]');
+    var inputs = form2.querySelectorAll('input[type=\"text\"],input[type=\"email\"], textarea,input[type=\"tel\"],input[type=\"file\"]');
     inputs.forEach(function(input) {
         input.classList.add('form-control');
     });
-    var submitButtons = form2.querySelectorAll('input[type="submit"], button[type="submit"]');
+    var submitButtons = form2.querySelectorAll('input[type=\"submit\"], button[type=\"submit\"]');
 
     submitButtons.forEach(function(button) {
         button.classList.add('cymetrix_button_icon');
@@ -1541,21 +1630,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-$(document).ready(function() {
-  var header = $("#web_nav");
+\$(document).ready(function() {
+  var header = \$(\"#web_nav\");
   var sticky = header.offset().top;
 
-  $(window).scroll(function() {
+  \$(window).scroll(function() {
     if (window.pageYOffset > sticky) {
-      header.addClass("sticky");
+      header.addClass(\"sticky\");
     } else {
-      header.removeClass("sticky");
+      header.removeClass(\"sticky\");
     }
   });
 });
 
 function updatePrevButton() {
-    var prevButton = document.querySelector(".discover_more .owl-controls .owl-prev");
+    var prevButton = document.querySelector(\".discover_more .owl-controls .owl-prev\");
     if (prevButton) {
         prevButton.innerHTML = ' &larr;';
         clearInterval(intervalId); // Stop checking once the element is found and updated
@@ -1564,7 +1653,7 @@ function updatePrevButton() {
 var intervalId = setInterval(updatePrevButton, 100);
 
 function updateNextButton() {
-    var nextButton = document.querySelector(".discover_more .owl-controls .owl-next");    
+    var nextButton = document.querySelector(\".discover_more .owl-controls .owl-next\");    
     if (nextButton) {
             nextButton.innerHTML = ' &larr;';
             clearInterval(intervalId2); // Stop checking once the element is found and updated
@@ -1603,28 +1692,28 @@ checkURLAndAdjustBanner();
 
 
 
-			let timer, activeLoop;
-			let сurrentId = 3;
-			const getKeyByValue = (obj, value) =>
-			Object.keys(obj).find(key => obj[key] === value);
-			let model = {
-				emea: "EMEApopUP",
-				amerika: "amerikaPopUP",
-				uk: "UKpopUP",
-				asia: "ASIApopUP"
-			};
+\t\t\tlet timer, activeLoop;
+\t\t\tlet сurrentId = 3;
+\t\t\tconst getKeyByValue = (obj, value) =>
+\t\t\tObject.keys(obj).find(key => obj[key] === value);
+\t\t\tlet model = {
+\t\t\t\temea: \"EMEApopUP\",
+\t\t\t\tamerika: \"amerikaPopUP\",
+\t\t\t\tuk: \"UKpopUP\",
+\t\t\t\tasia: \"ASIApopUP\"
+\t\t\t};
 
 
 
-			$(".st2").on("click", e => {
-			 //   $("g").css("display", "none");
+\t\t\t\$(\".st2\").on(\"click\", e => {
+\t\t\t //   \$(\"g\").css(\"display\", \"none\");
     
-				сurrentId = сurrentId +1;
-				let popUpCountry = $(e.target).attr("id");
-				let selector = "#" + model[popUpCountry];
+\t\t\t\tсurrentId = сurrentId +1;
+\t\t\t\tlet popUpCountry = \$(e.target).attr(\"id\");
+\t\t\t\tlet selector = \"#\" + model[popUpCountry];
 
-				togglePopUp($(selector));
-			});
+\t\t\t\ttogglePopUp(\$(selector));
+\t\t\t});
 
 
 document.querySelectorAll('.st0.st2').forEach(function(image) {
@@ -1642,7 +1731,7 @@ document.querySelectorAll('.st0.st2').forEach(function(image) {
 
 
 // <script>
-// 	document.querySelectorAll('.st0.st2').forEach(function(image) {
+// \tdocument.querySelectorAll('.st0.st2').forEach(function(image) {
 //     image.addEventListener('click', function() {
 //         var gElement = this.nextElementSibling;
 //         if (gElement.style.display === 'none' || gElement.style.display === '') {
@@ -1655,26 +1744,26 @@ document.querySelectorAll('.st0.st2').forEach(function(image) {
 
 // 
 
-			function togglePopUp(selector, isClicked) {
-				clearInterval(timer);
-				clearInterval(activeLoop);
-				$("#parentsvg")
-				.find("g.active")
-				.removeClass("active")
-				.addClass("popupWrapper");
-				$("#parentsvg")
-				.find(".preActive")
-				.removeClass("preActive");
-				$("#" + getKeyByValue(model, selector.attr("id"))).addClass("preActive");
-				timer = setTimeout(function() {
-					selector.removeClass("popupWrapper").addClass("active");
-					$("#" + getKeyByValue(model, selector.attr("id"))).removeClass("preActive");
-				}, 1000);
-				activeLoop = setTimeout(function() {
-					selector.removeClass("active").addClass("popupWrapper");
-					loop();
-				}, 5000);
-			}
+\t\t\tfunction togglePopUp(selector, isClicked) {
+\t\t\t\tclearInterval(timer);
+\t\t\t\tclearInterval(activeLoop);
+\t\t\t\t\$(\"#parentsvg\")
+\t\t\t\t.find(\"g.active\")
+\t\t\t\t.removeClass(\"active\")
+\t\t\t\t.addClass(\"popupWrapper\");
+\t\t\t\t\$(\"#parentsvg\")
+\t\t\t\t.find(\".preActive\")
+\t\t\t\t.removeClass(\"preActive\");
+\t\t\t\t\$(\"#\" + getKeyByValue(model, selector.attr(\"id\"))).addClass(\"preActive\");
+\t\t\t\ttimer = setTimeout(function() {
+\t\t\t\t\tselector.removeClass(\"popupWrapper\").addClass(\"active\");
+\t\t\t\t\t\$(\"#\" + getKeyByValue(model, selector.attr(\"id\"))).removeClass(\"preActive\");
+\t\t\t\t}, 1000);
+\t\t\t\tactiveLoop = setTimeout(function() {
+\t\t\t\t\tselector.removeClass(\"active\").addClass(\"popupWrapper\");
+\t\t\t\t\tloop();
+\t\t\t\t}, 5000);
+\t\t\t}
 
 
 
@@ -1721,7 +1810,7 @@ document.querySelectorAll('.st0.st2').forEach(function(image) {
 //     function animateTextNodes(parentNode) {
 //       iterateTextNodes(parentNode, textNode => {
 //         const words = textNode.nodeValue.split(' ');
-//         const newContent = words.map(word => `<span class="fade-in">${word}</span>`).join(' ');
+//         const newContent = words.map(word => `<span class=\"fade-in\">\${word}</span>`).join(' ');
 //         const wrapper = document.createElement('span');
 //         wrapper.innerHTML = newContent;
 //         textNode.replaceWith(wrapper);
@@ -1747,7 +1836,7 @@ document.querySelectorAll('.st0.st2').forEach(function(image) {
 
 //       if (svgContainer) {
 //         const svg = svgContainer.querySelector('svg');
-//         svgContainer.innerHTML = '<span class="fade-in active"></span>'; // Replace the SVG with span
+//         svgContainer.innerHTML = '<span class=\"fade-in active\"></span>'; // Replace the SVG with span
 //       }
 //     }
 //   });
@@ -1782,7 +1871,7 @@ carousel.appendChild(thisnextButton);
         // Function to move the slider
         function moveToSlide(slideIndex) {
             const percentage = -slideIndex * slideWidth;
-            track.style.transform = `translateX(${percentage}%)`;
+            track.style.transform = `translateX(\${percentage}%)`;
         }
 
         thisnextButton.addEventListener('click', () => {
@@ -1828,7 +1917,7 @@ if (!iframe) {
     placeholderImage.parentNode.replaceChild(iframe, placeholderImage);
 
     // Trigger the YouTube API to load the player
-    iframe.contentWindow.postMessage('{"event":"command","target":"player","data":{"command":"playVideo"}}', '*');
+    iframe.contentWindow.postMessage('{\"event\":\"command\",\"target\":\"player\",\"data\":{\"command\":\"playVideo\"}}', '*');
   }
 }
 // document.querySelectorAll('.menu-item').forEach(function (item) {
@@ -1883,7 +1972,7 @@ document.querySelectorAll('.nav-level-3.show .menu-item').forEach(function(item)
 
     
     video.addEventListener('error', function() {
-      console.error("Error: Video failed to load.");
+      console.error(\"Error: Video failed to load.\");
     });
     video.addEventListener('timeupdate', function() {
       if (video.currentTime > 0) {
@@ -1951,7 +2040,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-// document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener(\"DOMContentLoaded\", function() {
 //     // Variables for the slide index and the width of each item
 //     let currentIndex = 0;
 //     const itemWidth = 242; // width of each .owl-item in pixels
@@ -1974,7 +2063,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //         // Apply the transformation
 //         wrapper.style.transition = 'transform 0.5s ease';
-//         wrapper.style.transform = `translate3d(${translateX}px, 0, 0)`;
+//         wrapper.style.transform = `translate3d(\${translateX}px, 0, 0)`;
 //     }
 
 //     // Start the automatic sliding
@@ -2017,7 +2106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //             function updateSliderPosition(skipTransition = false) {
 //                 const translateValue = -(index * itemWidth);
-//                 wrapper.style.transform = `translate3d(${translateValue}px, 0, 0)`;
+//                 wrapper.style.transform = `translate3d(\${translateValue}px, 0, 0)`;
 //                 wrapper.style.transition = skipTransition ? 'none' : 'transform 0.5s ease-in-out';
 //             }
 //             updateSliderPosition(true);
@@ -2071,19 +2160,19 @@ document.addEventListener('DOMContentLoaded', function() {
 //                 startX = e.touches[0].clientX;
 //                 startTranslate = -(index * itemWidth);
 //                 stopAutoSlide();
-//                 wrapper.style.transition = "none";
+//                 wrapper.style.transition = \"none\";
 //             });
 
 //             wrapper.addEventListener('touchmove', (e) => {
 //                 const deltaX = e.touches[0].clientX - startX;
 //                 let translateValue = startTranslate + deltaX;
 //                 translateValue = Math.max(-(numOfItems - 2) * itemWidth, Math.min(0, translateValue));
-//                 wrapper.style.transform = `translate3d(${translateValue}px, 0, 0)`;
+//                 wrapper.style.transform = `translate3d(\${translateValue}px, 0, 0)`;
 //             });
 
 //             wrapper.addEventListener('touchend', (e) => {
 //                 const deltaX = e.changedTouches[0].clientX - startX;
-//                 wrapper.style.transition = "transform 0.5s ease-in-out";
+//                 wrapper.style.transition = \"transform 0.5s ease-in-out\";
 //                 if (Math.abs(deltaX) > 50) {
 //                     index = deltaX > 0 ? Math.max(1, index - 1) : Math.min(numOfItems - 2, index + 1);
 //                 }
@@ -2097,29 +2186,29 @@ document.addEventListener('DOMContentLoaded', function() {
 //     observer.observe(document.body, { childList: true, subtree: true });
 // }
 
-// $(document).ready(function() {
+// \$(document).ready(function() {
 //     // Check if there are any anchor tags inside #harnessing-box
-//     $('#harnessing-box a').each(function() {
+//     \$('#harnessing-box a').each(function() {
 //         // Calculate the width and add 40px
-//         var buttonWidth = $(this).outerWidth();
+//         var buttonWidth = \$(this).outerWidth();
         
-//         $(this).css('width', buttonWidth + 40 + 'px');
+//         \$(this).css('width', buttonWidth + 40 + 'px');
         
 //         console.log('this is width :' +buttonWidth );
 //     });
 // });
 
-$(document).ready(function() {
-    $('#harnessing-box a').each(function() {
-        var deviceWidth = $(window).width();
+\$(document).ready(function() {
+    \$('#harnessing-box a').each(function() {
+        var deviceWidth = \$(window).width();
         // Calculate text width
-        var buttonTextWidth = $(this).text().length * 8; 
+        var buttonTextWidth = \$(this).text().length * 8; 
         // Approx. 8px per character as a base
         console.log(' this ' + buttonTextWidth);
         if (deviceWidth > 991) {
-            $(this).css('width', (buttonTextWidth + 90) + 'px'); // Add 80px for devices above 991px
+            \$(this).css('width', (buttonTextWidth + 90) + 'px'); // Add 80px for devices above 991px
         } else {
-            $(this).css('width', (buttonTextWidth + 85) + 'px'); // Add 110px for devices below 991px
+            \$(this).css('width', (buttonTextWidth + 85) + 'px'); // Add 110px for devices below 991px
         }
     });
 });
@@ -2183,7 +2272,7 @@ h2,h2>span{font-size:32px!important;
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener(\"DOMContentLoaded\", function() {
     // Check if the current domain is cymetrixsoft.com (not drupal.cymetrixsoft.com)
     if (window.location.hostname === 'cymetrixsoft.com') {
         // Modify image and background URLs only if the domain is cymetrixsoft.com
@@ -2212,7 +2301,70 @@ h2,h2>span{font-size:32px!important;
 
 <script>
      function onSubmit(token) {
-     document.getElementById("webform-submission-contact-node-14-add-form").submit();
+     document.getElementById(\"webform-submission-contact-node-14-add-form\").submit();
    }
 </script>
 
+";
+        $this->env->getExtension('\Drupal\Core\Template\TwigExtension')
+            ->checkDeprecations($context, ["footer_blue_latest", "page"]);        return; yield '';
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName()
+    {
+        return "themes/contrib/dxpr_theme/templates/footer.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo()
+    {
+        return array (  1175 => 1087,  252 => 167,  246 => 164,  229 => 150,  223 => 147,  217 => 144,  211 => 141,  166 => 99,  152 => 87,  130 => 67,  122 => 62,  114 => 59,  106 => 54,  98 => 48,  95 => 46,  93 => 45,  90 => 44,  79 => 35,  60 => 19,  44 => 5,  40 => 2,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("", "themes/contrib/dxpr_theme/templates/footer.html.twig", "/home3/cymetrix/drupal.cymetrixsoft.com/themes/contrib/dxpr_theme/templates/footer.html.twig");
+    }
+    
+    public function checkSecurity()
+    {
+        static $tags = array("if" => 45);
+        static $filters = array("escape" => 19, "merge" => 19);
+        static $functions = array("drupal_entity" => 19, "file_url" => 99, "url" => 164);
+
+        try {
+            $this->sandbox->checkSecurity(
+                ['if'],
+                ['escape', 'merge'],
+                ['drupal_entity', 'file_url', 'url'],
+                $this->source
+            );
+        } catch (SecurityError $e) {
+            $e->setSourceContext($this->source);
+
+            if ($e instanceof SecurityNotAllowedTagError && isset($tags[$e->getTagName()])) {
+                $e->setTemplateLine($tags[$e->getTagName()]);
+            } elseif ($e instanceof SecurityNotAllowedFilterError && isset($filters[$e->getFilterName()])) {
+                $e->setTemplateLine($filters[$e->getFilterName()]);
+            } elseif ($e instanceof SecurityNotAllowedFunctionError && isset($functions[$e->getFunctionName()])) {
+                $e->setTemplateLine($functions[$e->getFunctionName()]);
+            }
+
+            throw $e;
+        }
+
+    }
+}
