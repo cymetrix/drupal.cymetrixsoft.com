@@ -39,26 +39,10 @@ Redirect 301 /Thankyou/ /thankyou/
   RewriteCond %{REQUEST_URI} !\.
   RewriteCond %{REQUEST_URI} !/$
   RewriteCond %{REQUEST_URI} !^/webform($|/)
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
-</IfModule>
-
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  # Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  # Add trailing slash to URLs if not a file or folder, and only if there are no query parameters
-  RewriteCond %{REQUEST_URI} !\.
-  RewriteCond %{REQUEST_URI} !/$
-  RewriteCond %{QUERY_STRING} ^$
   RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1/ [L,R=301]
 </IfModule>
+
+
 
 
 
