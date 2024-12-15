@@ -19,3 +19,5 @@ themes/contrib/dxpr_theme/js/minified/main.min.js
 
 # Example: Ignore environment configuration files
 # .env
+
+robots.txt

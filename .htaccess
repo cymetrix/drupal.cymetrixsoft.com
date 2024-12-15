@@ -20,25 +20,25 @@ Redirect 301 /Thankyou/ /thankyou/
 
 
 
-<IfModule mod_rewrite.c>
-  RewriteEngine On
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
 
-  # Ensure HTTPS and add www if necessary, but avoid infinite redirect loop
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
+#   # Ensure HTTPS and add www if necessary, but avoid infinite redirect loop
+#   RewriteCond %{HTTPS} off
+#   RewriteCond %{HTTP_HOST} !^www\. [NC]
+#   RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
 
-  # Ensure that if the domain is without www, redirect it to www
-  RewriteCond %{HTTP_HOST} ^cymetrixsoft\.com$ [NC]
-  RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
+#   # Ensure that if the domain is without www, redirect it to www
+#   RewriteCond %{HTTP_HOST} ^cymetrixsoft\.com$ [NC]
+#   RewriteRule ^ https://www.cymetrixsoft.com%{REQUEST_URI} [L,R=301]
 
-  # Add trailing slash to URLs if not a file, folder, excluded path, or AJAX request
-  RewriteCond %{REQUEST_URI} !\.
-  RewriteCond %{REQUEST_URI} !/$
-  RewriteCond %{REQUEST_URI} !^/webform($|/)
-  RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest [NC]
-  RewriteRule ^(.*)$ https://www.cymetrixsoft.com/$1/ [L,R=301]
-</IfModule>
+#   # Add trailing slash to URLs if not a file, folder, excluded path, or AJAX request
+#   RewriteCond %{REQUEST_URI} !\.
+#   RewriteCond %{REQUEST_URI} !/$
+#   RewriteCond %{REQUEST_URI} !^/webform($|/)
+#   RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest [NC]
+#   RewriteRule ^(.*)$ https://www.cymetrixsoft.com/$1/ [L,R=301]
+# </IfModule>
 
 
 
