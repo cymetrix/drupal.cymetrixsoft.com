@@ -421,6 +421,8 @@ function dxpr_theme_preprocess_webform_element(&$variables)
 }
 
 function dxpr_theme_preprocess_node(&$variables) {
+
+
     if ($variables['node']->getType() == 'case_study') {
         $current_node_id = $variables['node']->id();
 

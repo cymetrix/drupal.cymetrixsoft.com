@@ -197,6 +197,16 @@
 	</div>
 
 
+<div class="blog-navigation">
+  {% if prev_node %}
+    <a href="{{ path('entity.node.canonical', {'node': prev_node.id}) }}">← Previous: {{ prev_node.title }}</a>
+  {% endif %}
+  {% if next_node %}
+    <a href="{{ path('entity.node.canonical', {'node': next_node.id}) }}">Next: {{ next_node.title }} →</a>
+  {% endif %}
+</div>
+
+
 		{#{% include "themes/contrib/dxpr_theme/templates/footer.html.twig" %}#}
 
 </body>
