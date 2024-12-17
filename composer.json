@@ -38,6 +38,7 @@
         "drupal/mimemail": "^1.0.0-alpha",
         "drupal/mix": "^1.10@beta",
         "drupal/page_manager": "^4.0@RC",
+        "drupal/pathauto": "^1.13",
         "drupal/phpmailer_smtp": "^2.2",
         "drupal/smtp": "^1.4",
         "drupal/token": "^1.14",
