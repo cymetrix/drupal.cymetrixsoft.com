@@ -14,15 +14,11 @@ testing/
 modules/contrib/pathauto/
 private/webform/
 
-sites/default/settings.php
-sites/default/settings.local.php
-sites/default/files/
-themes/contrib/dxpr_theme/js/minified/main.js
-themes/contrib/dxpr_theme/js/minified/main.min.js
-themes/contrib/dxpr_theme/templates/html.html.twig
+sites/default/
+themes/contrib
 
-robots.txt
-robots2.txt
-.htaccess
-error_log
-sitemap.xml
+/robots.txt
+/robots2.txt
+/.htaccess
+/error_log
+/sitemap.xml
