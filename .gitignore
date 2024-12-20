@@ -3,13 +3,16 @@
 *.tar
 *.pack
 
-
-# You can add other files or folders to ignore below
-
-# Example: Ignore node_modules folder
+# Add other files or folders to ignore below
 node_modules/
 .git_backup/
 .git/
+blog/
+newsubdomainblogs/
+subdomainblogs/
+testing/
+modules/contrib/pathauto/
+private/webform/
 
 sites/default/settings.php
 sites/default/settings.local.php
@@ -17,8 +20,6 @@ sites/default/files/
 themes/contrib/dxpr_theme/js/minified/main.js
 themes/contrib/dxpr_theme/js/minified/main.min.js
 themes/contrib/dxpr_theme/templates/html.html.twig
-# Example: Ignore environment configuration files
-# .env
 
 robots.txt
 robots2.txt
