@@ -16,10 +16,12 @@ sites/default/settings.local.php
 sites/default/files/
 themes/contrib/dxpr_theme/js/minified/main.js
 themes/contrib/dxpr_theme/js/minified/main.min.js
-
+themes/contrib/dxpr_theme/templates/html.html.twig
 # Example: Ignore environment configuration files
 # .env
 
 robots.txt
+robots2.txt
 .htaccess
 error_log
+sitemap.xml

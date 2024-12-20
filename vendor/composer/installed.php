@@ -3,7 +3,7 @@
         'name' => 'drupal/legacy-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2221bbfe6b5aac92694c661d87623b8c246fd980',
+        'reference' => '928b72bcedb548d0631b28ffdbac629ed5e71958',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -469,6 +469,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/hcaptcha' => array(
+            'pretty_version' => '1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => '8.x-1.3',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/hcaptcha',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/imageapi_optimize' => array(
             'pretty_version' => '4.1.0-beta1',
             'version' => '4.1.0.0-beta1',
@@ -499,7 +508,7 @@
         'drupal/legacy-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2221bbfe6b5aac92694c661d87623b8c246fd980',
+            'reference' => '928b72bcedb548d0631b28ffdbac629ed5e71958',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
