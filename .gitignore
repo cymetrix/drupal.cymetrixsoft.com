@@ -1,0 +1,24 @@
+# Ignore all .zip files
+*.zip
+*.tar
+*.pack
+
+# Add other files or folders to ignore below
+node_modules/
+.git_backup/
+.git/
+blog/
+newsubdomainblogs/
+subdomainblogs/
+testing/
+modules/contrib/pathauto/
+private/webform/
+
+sites/default/
+themes/contrib
+
+/robots.txt
+/robots2.txt
+/.htaccess
+/error_log
+/sitemap.xml

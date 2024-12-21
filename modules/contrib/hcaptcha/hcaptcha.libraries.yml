@@ -1,7 +1,0 @@
-loader:
-  js:
-    js/hcaptcha-loader.js: { }
-  dependencies:
-    - core/drupal
-    - core/drupalSettings
-    - core/once

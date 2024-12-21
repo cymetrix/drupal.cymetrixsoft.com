@@ -1,0 +1,9 @@
+# Ajax commands.
+
+turnstile.ajax:
+  version: VERSION
+  js:
+    turnstile.ajax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
