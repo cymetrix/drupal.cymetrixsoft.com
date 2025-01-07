@@ -324,7 +324,7 @@ $(document).ready(function() {
                 padding: 10px 0;
                 background-color: #f5f5f5;
             ">
-                <p>Ready to Amplify Your Salesforce Possibilities? Explore our <a href="https://www.damcogroup.com/salesforce/industry-solutions">Salesforce Industry Expertise</a></p>
+                <p>Supercharge your customer support with AI & Agentforce | Join the live webinar on 28th Jan 2025 | Register Now <a class=" mega-menu cymetrix_button_icon active" href="https://www.cymetrixsoft.com/webinars/supercharge-customer-support-with-ai-and-agentforce-ai-agents/"></a></p>
             </div>`;
 
             $('.menu-item.dropdown.mega-menu .dropdown-menu.nav-level-1').append(megaMenuFooter);
