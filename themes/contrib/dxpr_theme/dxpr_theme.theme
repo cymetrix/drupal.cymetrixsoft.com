@@ -12,11 +12,25 @@ use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Url;
 
+
+
+
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\Core\Render\Markup;
+
 /**
- * Implements hook_library_info_alter().
- *
- * Replaces style sheets declared in libraries with color-altered style sheets.
+ * Implements hook_preprocess_page().
  */
+
+
+
+
+
+
+
+
+
 function dxpr_theme_library_info_alter(&$libraries, $extension) {
   if ($extension == 'dxpr_theme') {
     // Manage dxpr_theme themesettings CSS.
@@ -482,6 +496,69 @@ function dxpr_theme_preprocess_node(&$variables) {
 
 
 function dxpr_theme_preprocess_page(&$variables) {
+
+
+
+$cache_id = 'menu_main_cache';
+  
+  // Log: Function execution started
+  \Drupal::logger('dxpr_theme')->notice('dxpr_theme_preprocess_page() called.');
+
+  // Try to fetch the menu from cache
+  if ($cache = \Drupal::cache()->get($cache_id)) {
+    \Drupal::logger('dxpr_theme')->notice('Menu found in cache.');
+    $variables['menu_main'] = $cache->data;
+    return;
+  }
+
+  // Log: Cache miss
+  \Drupal::logger('dxpr_theme')->notice('Cache miss. Loading menu.');
+
+  // Load the menu tree
+  $menu_name = 'main'; // Change to your actual menu machine name
+  $parameters = new MenuTreeParameters();
+  $parameters->setMaxDepth(3);
+
+  $menu_tree = \Drupal::menuTree()->load($menu_name, $parameters);
+
+  if (!$menu_tree) {
+    \Drupal::logger('dxpr_theme')->error('Failed to load menu: ' . $menu_name);
+    return;
+  }
+
+  \Drupal::logger('dxpr_theme')->notice('Menu tree loaded successfully.');
+
+  // Transform the tree using default manipulators
+  $manipulators = [
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ];
+  $menu_tree = \Drupal::menuTree()->transform($menu_tree, $manipulators);
+
+  // Render the menu
+  $menu_rendered = \Drupal::menuTree()->build($menu_tree);
+
+  if (!$menu_rendered) {
+    \Drupal::logger('dxpr_theme')->error('Menu rendering failed.');
+    return;
+  }
+
+  \Drupal::logger('dxpr_theme')->notice('Menu rendered successfully.');
+
+  // Cache for 1 hour
+  \Drupal::cache()->set($cache_id, $menu_rendered, time() + 3600, ['menu:' . $menu_name]);
+  \Drupal::logger('dxpr_theme')->notice('Menu cached successfully.');
+
+  // Assign to template variables
+  $variables['menu_main'] = Markup::create(\Drupal::service('renderer')->render($menu_rendered));
+
+  \Drupal::logger('dxpr_theme')->notice('Menu passed to template.');
+  
+  
+  
+  
+
+
   // Load all articles sorted by 'created' field in descending order
   $weight_field = 'field_weight';
 
@@ -513,9 +590,7 @@ $query->condition('t.name', 'Featured', '=');
 
 $nids_3 = $query->execute()->fetchCol(); // Fetch only NIDs
 
-// Log the NIDs for debugging
-\Drupal::logger('dxpr_theme')->notice('<pre>' . print_r($nids_3, TRUE) . '</pre>');
-
+// LOG THE NIDS FOR DEBUGGING
 // Load nodes
 $featured_articles = \Drupal\node\Entity\Node::loadMultiple($nids_3);
 $variables['featured_articles'] = $featured_articles;
@@ -580,7 +655,6 @@ function dxpr_theme_get_latest_footer_blue($resolved_path) {
   // Dump resolved path for debugging
   // dump($resolved_path) ; 
   
-  \Drupal::logger('custom_debug')->debug('Resolved Path: @resolved_path', ['@resolved_path' => $resolved_path]);
 
   $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
     ->condition('type', 'footer_blue')

@@ -1,16 +1,32 @@
 {% import _self as menus %}
 
-{{ menus.build_menu(items, attributes, 0) }}
+{# Start Caching the Menu #}
+{% set cache_id = 'menu_main_cache' %}
+{% set cached_menu = cache.get(cache_id) %}
+
+{% if not cached_menu %}
+  {% set cached_menu %}
+    {{ menus.build_menu(items, attributes, 0) }}
+  {% endset %}
+
+  {# Attach Cache Tags & Contexts for Menu #}
+  {% do cache.set('menu_main_cache', cached_menu, 3600, { 'cache_tags': ['menu:main'] }) %}
+{% endif %}
+
+{{ cached_menu }}
 
 {% macro build_menu(items, attributes, menu_level) %}
   {% if items %}
-    {%
-      set ul_classes = [
-        menu_level == 0 ? 'navbar-nav justify-content-end flex-wrap megamenu',
-        menu_level > 0  ? 'dropdown-menu',
-        'nav-level-' ~ menu_level,
-      ]
-    %}
+    {% set ul_classes = [] %}
+
+    {% if menu_level == 0 %}
+      {% set ul_classes = ul_classes|merge(['navbar-nav', 'justify-content-end', 'flex-wrap', 'megamenu']) %}
+    {% elseif menu_level > 0 %}
+      {% set ul_classes = ul_classes|merge(['dropdown-menu']) %}
+    {% endif %}
+
+    {% set ul_classes = ul_classes|merge(['nav-level-' ~ menu_level]) %}
+
     <ul{{ attributes.addClass(ul_classes) }}>
       {% for item in items %}
         {{ menus.add_link(item, attributes.removeClass(ul_classes), menu_level) }}
@@ -20,28 +36,32 @@
 {% endmacro %}
 
 {% macro add_link(item, attributes, menu_level) %}
-  {%
-    set list_item_classes = [
-      'menu-item',
-      item.is_expanded ? 'dropdown' 
-    ]
-  %}
-  {%
-    set link_class = [
-      menu_level == 0 ? 'nav-link',
-      item.in_active_trail ? 'active',
-      menu_level == 0 and (item.is_expanded or item.is_collapsed) ? 'dropdown-toggle',
-      menu_level > 0 ? 'dropdown-item mycustomemenuclass',
-    ]
-  %}
-  {%
-    set toggle_class = [
-    ]
-  %}
+  {% set list_item_classes = ['menu-item'] %}
+
+  {% if item.is_expanded %}
+    {% set list_item_classes = list_item_classes|merge(['dropdown']) %}
+  {% endif %}
+
+  {% set link_class = [] %}
+
+  {% if menu_level == 0 %}
+    {% set link_class = link_class|merge(['nav-link']) %}
+  {% endif %}
+  {% if item.in_active_trail %}
+    {% set link_class = link_class|merge(['active']) %}
+  {% endif %}
+  {% if menu_level == 0 and (item.is_expanded or item.is_collapsed) %}
+    {% set link_class = link_class|merge(['dropdown-toggle']) %}
+  {% endif %}
+  {% if menu_level > 0 %}
+    {% set link_class = link_class|merge(['dropdown-item', 'mycustomemenuclass']) %}
+  {% endif %}
+
   <li{{ item.attributes.addClass(list_item_classes) }}>
-      
     {% if item.below %}
-      {{ link(item.title, item.url, { 'class': link_class, 'aria-haspopup':'false', 'aria-expanded': 'false' }) }}
+      <a href="{{ item.url }}" class="{{ link_class|join(' ') }}" aria-haspopup="false" aria-expanded="false">
+        {{ item.title }}
+      </a>
       {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
       <span class="menu-item-description">{{ item.original_link.pluginDefinition.description }}</span>
     {% else %}
@@ -49,12 +69,6 @@
       {% if item.original_link.pluginDefinition.description %}
         <span class="menu-item-description some">{{ item.original_link.pluginDefinition.description }}</span>
       {% endif %}
-      
     {% endif %}
   </li>
 {% endmacro %}
-
-
-
-
-
